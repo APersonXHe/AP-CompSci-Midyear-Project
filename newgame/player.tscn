@@ -7,6 +7,7 @@
 size = Vector2(16, 16)
 
 [node name="Player" type="CharacterBody2D"]
+floor_snap_length = 2.0
 script = ExtResource("1_cd307")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
