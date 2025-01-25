@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dy30yw8rgbrmd"]
 
 [ext_resource type="Texture2D" uid="uid://dcsrio27mr2m5" path="res://assets/sprites/main_menu/PLACEHOLDER_BG.jpg" id="1_6r15x"]
-[ext_resource type="Script" path="res://scenes/main_menu/main_menu.gd" id="1_wfp4i"]
+[ext_resource type="Script" path="res://scripts/main_menu/main_menu.gd" id="1_wfp4i"]
 [ext_resource type="FontFile" uid="uid://tjda5mp3yehk" path="res://assets/fonts/Silkscreen-Bold.ttf" id="2_rtsva"]
 [ext_resource type="Texture2D" uid="uid://d4frbsd40xsel" path="res://assets/sprites/main_menu/PLACEHOLDER_IMG2.png" id="3_ialcv"]
 
