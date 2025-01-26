@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://v6gusyi768gk"]
+
+[ext_resource type="Texture2D" uid="uid://1ppwk1a1fd4c" path="res://scenes/sky.png" id="1_8ca8v"]
+[ext_resource type="Script" path="res://scripts/world/parallax.gd" id="1_o2ar6"]
+[ext_resource type="Texture2D" uid="uid://c27dgn6a43bn6" path="res://scenes/mountains.png" id="2_xjsdd"]
+[ext_resource type="PackedScene" uid="uid://bbj3ghmos7sya" path="res://scenes/player/player.tscn" id="3_o00qg"]
+
+[node name="Parallax" type="Node2D"]
+script = ExtResource("1_o2ar6")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Sky" type="ParallaxLayer" parent="ParallaxBackground"]
+texture_filter = 1
+motion_scale = Vector2(0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Sky"]
+texture_filter = 1
+texture = ExtResource("1_8ca8v")
+centered = false
+
+[node name="Near Mountains" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(320, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Near Mountains"]
+texture_filter = 1
+texture = ExtResource("2_xjsdd")
+centered = false
+
+[node name="Player" parent="." instance=ExtResource("3_o00qg")]
+position = Vector2(152, 136)

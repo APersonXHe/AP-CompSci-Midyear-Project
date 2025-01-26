@@ -7,7 +7,7 @@ const FRICTION = 600
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 func _physics_process(delta: float) -> void: # delta i think is time? not too sure
-	apply_gravity(delta)
+
 	handle_jump()
 	
 	var input_axis := Input.get_axis("ui_left", "ui_right")
