@@ -28,4 +28,12 @@ texture = ExtResource("2_xjsdd")
 centered = false
 
 [node name="Player" parent="." instance=ExtResource("3_o00qg")]
-position = Vector2(152, 136)
+position = Vector2(24, 120)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(0, 8)
+polygon = PackedVector2Array(0, 152, 88, 152, 128, 152, 128, 128, 168, 128, 168, 104, 208, 104, 208, 72, 296, 72, 392, 168, 0, 168)
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D/CollisionPolygon2D"]
