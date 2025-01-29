@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2govl64kjjal"]
+
+[ext_resource type="Texture2D" uid="uid://dwq7amwbstt4t" path="res://scenes/Screenshot 2025-01-29 155912.png" id="1_uvusr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2i7tv"]
+size = Vector2(408, 16)
+
+[node name="FLOOR" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-8, -8)
+scale = Vector2(0.839506, 0.033543)
+texture = ExtResource("1_uvusr")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(196, 0)
+shape = SubResource("RectangleShape2D_2i7tv")
+
+[node name="Polygon2D" type="Polygon2D" parent="CollisionShape2D"]

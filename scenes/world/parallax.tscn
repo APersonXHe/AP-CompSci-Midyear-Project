@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://v6gusyi768gk"]
+[gd_scene load_steps=9 format=3 uid="uid://v6gusyi768gk"]
 
 [ext_resource type="Texture2D" uid="uid://1ppwk1a1fd4c" path="res://scenes/sky.png" id="1_8ca8v"]
 [ext_resource type="Script" path="res://scripts/world/parallax.gd" id="1_o2ar6"]
 [ext_resource type="Texture2D" uid="uid://c27dgn6a43bn6" path="res://scenes/mountains.png" id="2_xjsdd"]
 [ext_resource type="PackedScene" uid="uid://bbj3ghmos7sya" path="res://scenes/player/player.tscn" id="3_o00qg"]
+[ext_resource type="PackedScene" uid="uid://bd3yvxoqa54oh" path="res://scenes/world/square_block.tscn" id="5_35h78"]
+[ext_resource type="Script" path="res://scripts/world/static_body_2d.gd" id="6_xn22r"]
+[ext_resource type="PackedScene" uid="uid://c8ytpxskly7h6" path="res://scenes/world/spike.tscn" id="7_464ch"]
+[ext_resource type="PackedScene" uid="uid://b2govl64kjjal" path="res://scenes/world/floor.tscn" id="8_y7lpd"]
 
 [node name="Parallax" type="Node2D"]
 script = ExtResource("1_o2ar6")
@@ -30,10 +34,12 @@ centered = false
 [node name="Player" parent="." instance=ExtResource("3_o00qg")]
 position = Vector2(24, 120)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D2" parent="." instance=ExtResource("5_35h78")]
+position = Vector2(80, 152)
+script = ExtResource("6_xn22r")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-position = Vector2(0, 8)
-polygon = PackedVector2Array(0, 152, 88, 152, 128, 152, 128, 128, 168, 128, 168, 104, 208, 104, 208, 72, 296, 72, 392, 168, 0, 168)
+[node name="SPIKE" parent="." instance=ExtResource("7_464ch")]
+position = Vector2(144, 152)
 
-[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D/CollisionPolygon2D"]
+[node name="FLOOR" parent="." instance=ExtResource("8_y7lpd")]
+position = Vector2(8, 168)
