@@ -7,8 +7,6 @@ extends Node2D
 func _ready():
 	polygon_2d.polygon = collision_polygon_2d.polygon # set properties on nodes or get properties on those nodes
 
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
