@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cn07dxbb4pvo7"
-path="res://.godot/imported/trees.png-aae64ae71e38b889bacd9a989dc53946.ctex"
+uid="uid://dwq7amwbstt4t"
+path="res://.godot/imported/blue_rectangle.png-f1bc44a3f94760dc36625656726fc396.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/trees.png"
-dest_files=["res://.godot/imported/trees.png-aae64ae71e38b889bacd9a989dc53946.ctex"]
+source_file="res://assets/sprites/background/blue_rectangle.png"
+dest_files=["res://.godot/imported/blue_rectangle.png-f1bc44a3f94760dc36625656726fc396.ctex"]
 
 [params]
 

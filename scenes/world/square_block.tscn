@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bd3yvxoqa54oh"]
 
-[ext_resource type="Texture2D" uid="uid://dwq7amwbstt4t" path="res://scenes/Screenshot 2025-01-29 155912.png" id="1_cc10e"]
+[ext_resource type="Texture2D" uid="uid://dwq7amwbstt4t" path="res://assets/sprites/background/blue_rectangle.png" id="1_8kott"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_imjdb"]
 
@@ -9,7 +9,7 @@
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-8, -8)
 scale = Vector2(0.0329218, 0.0302457)
-texture = ExtResource("1_cc10e")
+texture = ExtResource("1_8kott")
 centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

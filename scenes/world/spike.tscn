@@ -1,13 +1,13 @@
 [gd_scene load_steps=2 format=3 uid="uid://c8ytpxskly7h6"]
 
-[ext_resource type="Texture2D" uid="uid://bdvy6q6qobw3u" path="res://scenes/image-removebg-preview (93).png" id="1_lfmo7"]
+[ext_resource type="Texture2D" uid="uid://bdvy6q6qobw3u" path="res://assets/sprites/background/blue_spike.png" id="1_uepd8"]
 
 [node name="SPIKE" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-8, -8)
 scale = Vector2(0.0305927, 0.033543)
-texture = ExtResource("1_lfmo7")
+texture = ExtResource("1_uepd8")
 centered = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]

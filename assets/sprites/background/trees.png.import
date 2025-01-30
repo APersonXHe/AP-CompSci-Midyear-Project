@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clual8rgra13l"
-path="res://.godot/imported/near-clouds.png-3a709ab061da27420de11ce15ca239e0.ctex"
+uid="uid://cn07dxbb4pvo7"
+path="res://.godot/imported/trees.png-4f865c3917363e487a3eab290e534d05.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/near-clouds.png"
-dest_files=["res://.godot/imported/near-clouds.png-3a709ab061da27420de11ce15ca239e0.ctex"]
+source_file="res://assets/sprites/background/trees.png"
+dest_files=["res://.godot/imported/trees.png-4f865c3917363e487a3eab290e534d05.ctex"]
 
 [params]
 
