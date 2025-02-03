@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bp8fb65hwsu47"]
+
+[ext_resource type="Texture2D" uid="uid://dn035mcu2bd0k" path="res://assets/sprites/drum_machine/drumtile_orange.png" id="1_hnjkb"]
+
+[node name="BeatObstacleOrange" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_hnjkb")

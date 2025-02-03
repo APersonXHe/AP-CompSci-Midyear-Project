@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://71s20u3mwjvs"]
+
+[ext_resource type="Script" path="res://scripts/drum_machine/drum_machine.gd" id="1_mw34x"]
+[ext_resource type="PackedScene" uid="uid://pohcv3tfqhnm" path="res://scenes/drum_machine/beat_obstacle_cyan.tscn" id="2_4yb50"]
+[ext_resource type="PackedScene" uid="uid://bp8fb65hwsu47" path="res://scenes/drum_machine/beat_obstacle_orange.tscn" id="3_qoaie"]
+[ext_resource type="PackedScene" uid="uid://bcmmap64lgy4w" path="res://scenes/drum_machine/beat_obstacle_red.tscn" id="4_w027a"]
+[ext_resource type="PackedScene" uid="uid://8p5murs3blri" path="res://scenes/drum_machine/beat_obstacle_green.tscn" id="5_5ye27"]
+
+[node name="DrumMachine" type="Node2D"]
+script = ExtResource("1_mw34x")
+
+[node name="SpawnTimer" type="Timer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = -33.0
+offset_top = 71.0
+offset_right = 1411.0
+offset_bottom = 503.0
+scale = Vector2(0.25, 0.25)
+
+[node name="BeatObstacleRed" parent="VBoxContainer" instance=ExtResource("4_w027a")]
+position = Vector2(1296, 16)
+scale = Vector2(0.5, 0.5)
+
+[node name="BeatObstacleOrange" parent="VBoxContainer" instance=ExtResource("3_qoaie")]
+position = Vector2(1292, 108)
+scale = Vector2(0.5, 0.5)
+
+[node name="BeatObstacleGreen" parent="VBoxContainer" instance=ExtResource("5_5ye27")]
+position = Vector2(1296, 208)
+scale = Vector2(0.5, 0.5)
+
+[node name="BeatObstacleCyan" parent="VBoxContainer" instance=ExtResource("2_4yb50")]
+position = Vector2(1276, 304)
+scale = Vector2(0.5, 0.5)

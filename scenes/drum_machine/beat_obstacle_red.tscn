@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bcmmap64lgy4w"]
+
+[ext_resource type="Texture2D" uid="uid://cgvcy0bvlgko" path="res://assets/sprites/drum_machine/drumtile_red.png" id="1_u536i"]
+
+[node name="BeatObstacleRed" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_u536i")

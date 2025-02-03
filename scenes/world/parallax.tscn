@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://v6gusyi768gk"]
+[gd_scene load_steps=10 format=3 uid="uid://v6gusyi768gk"]
 
 [ext_resource type="Script" path="res://scripts/world/parallax.gd" id="1_o2ar6"]
 [ext_resource type="Texture2D" uid="uid://1ppwk1a1fd4c" path="res://assets/sprites/background/sky.png" id="2_exfr5"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://scripts/world/static_body_2d.gd" id="6_xn22r"]
 [ext_resource type="PackedScene" uid="uid://c8ytpxskly7h6" path="res://scenes/world/spike.tscn" id="7_464ch"]
 [ext_resource type="PackedScene" uid="uid://b2govl64kjjal" path="res://scenes/world/floor.tscn" id="8_y7lpd"]
+[ext_resource type="PackedScene" uid="uid://71s20u3mwjvs" path="res://scenes/drum_machine/drum_machine.tscn" id="9_g2qcq"]
 
 [node name="Parallax" type="Node2D"]
 script = ExtResource("1_o2ar6")
@@ -43,3 +44,6 @@ position = Vector2(144, 152)
 
 [node name="FLOOR" parent="." instance=ExtResource("8_y7lpd")]
 position = Vector2(8, 168)
+
+[node name="DrumMachine" parent="." instance=ExtResource("9_g2qcq")]
+position = Vector2(162, 151)

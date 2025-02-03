@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://pohcv3tfqhnm"]
+
+[ext_resource type="Texture2D" uid="uid://tiu0r2ktcrvo" path="res://assets/sprites/drum_machine/drumtile_cyan.png" id="2_ersui"]
+
+[node name="BeatObstacleCyan" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 175.0
+offset_bottom = 178.0
+texture = ExtResource("2_ersui")
