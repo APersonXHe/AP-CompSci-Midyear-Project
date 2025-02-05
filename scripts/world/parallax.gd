@@ -12,4 +12,8 @@ func _ready():  # this is just placeholder code demonstrating how you can code t
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if Input.is_action_just_pressed("ui_cancel"):  # 'ui_cancel' maps to 'esc' by default in Input Map
+		go_to_main_menu()
+	
+func go_to_main_menu() -> void:
+	get_tree().change_scene_to_file("res://scenes/main_menu/main_menu.tscn")
