@@ -36,11 +36,11 @@ centered = false
 position = Vector2(24, 120)
 
 [node name="StaticBody2D2" parent="." instance=ExtResource("5_35h78")]
-position = Vector2(80, 160)
+position = Vector2(32, 160)
 script = ExtResource("6_xn22r")
 
 [node name="SPIKE" parent="." instance=ExtResource("7_464ch")]
-position = Vector2(145, 160)
+position = Vector2(560, 168)
 
 [node name="FLOOR" parent="." instance=ExtResource("8_y7lpd")]
 position = Vector2(8, 176)

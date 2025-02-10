@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://c8ytpxskly7h6"]
+[gd_scene load_steps=3 format=3 uid="uid://c8ytpxskly7h6"]
 
+[ext_resource type="Script" path="res://scripts/world/spike.gd" id="1_p4a3p"]
 [ext_resource type="Texture2D" uid="uid://bdvy6q6qobw3u" path="res://assets/sprites/background/blue_spike.png" id="1_uepd8"]
 
 [node name="SPIKE" type="StaticBody2D"]
+script = ExtResource("1_p4a3p")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-8, -8)
