@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dr4vbd4eks4ok"
+path="res://.godot/imported/cYsmix - Babaroque.mp3-d9f28a6b1d89b67e163874fcbbb1dd01.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/cYsmix - Babaroque.mp3"
+dest_files=["res://.godot/imported/cYsmix - Babaroque.mp3-d9f28a6b1d89b67e163874fcbbb1dd01.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

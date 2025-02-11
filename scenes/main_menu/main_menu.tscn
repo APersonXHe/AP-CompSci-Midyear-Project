@@ -30,26 +30,27 @@ layout_mode = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Title" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-text = "<amazing
-placeholder
-name>"
+text = "BeatBound
+Odyssey
+
+"
 label_settings = SubResource("LabelSettings_u64td")
 
-[node name="new Game button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Play" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-focus_neighbor_top = NodePath("../quit button")
-text = "NEW GAME"
+focus_neighbor_top = NodePath("../Quit")
+text = "PLAY"
 clip_text = true
 
-[node name="continue button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="About" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-text = "CONTINUE"
+text = "ABOUT"
 
-[node name="quit button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Quit" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-focus_neighbor_bottom = NodePath("../new Game button")
+focus_neighbor_bottom = NodePath("../Play")
 text = "QUIT"
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer"]
@@ -57,5 +58,6 @@ layout_mode = 2
 texture = ExtResource("3_ialcv")
 expand_mode = 2
 
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/new Game button" to="." method="_on_new_game_button_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/quit button" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/About" to="." method="_on_about_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

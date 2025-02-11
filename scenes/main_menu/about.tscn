@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://chs5co5a0kgvw"]
+
+[ext_resource type="Texture2D" uid="uid://dcsrio27mr2m5" path="res://assets/sprites/main_menu/PLACEHOLDER_BG.jpg" id="1_jweg5"]
+
+[node name="About" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 320.0
+offset_bottom = 180.0
+texture = ExtResource("1_jweg5")
