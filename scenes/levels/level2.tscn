@@ -1,11 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://galr2ycy0xho"]
+[gd_scene load_steps=9 format=3 uid="uid://galr2ycy0xho"]
 
 [ext_resource type="Script" path="res://scripts/levels/level_2.gd" id="1_euolj"]
 [ext_resource type="Texture2D" uid="uid://1ppwk1a1fd4c" path="res://assets/sprites/background/sky.png" id="2_butjw"]
 [ext_resource type="Texture2D" uid="uid://c27dgn6a43bn6" path="res://assets/sprites/background/mountains.png" id="3_yvogf"]
 [ext_resource type="PackedScene" uid="uid://bbj3ghmos7sya" path="res://scenes/player/player.tscn" id="4_tn7kv"]
-[ext_resource type="PackedScene" uid="uid://bd3yvxoqa54oh" path="res://scenes/world/square_block.tscn" id="5_iecl3"]
-[ext_resource type="Script" path="res://scripts/world/static_body_2d.gd" id="6_xwif7"]
 [ext_resource type="PackedScene" uid="uid://c8ytpxskly7h6" path="res://scenes/world/spike.tscn" id="7_vvh1e"]
 [ext_resource type="PackedScene" uid="uid://b2govl64kjjal" path="res://scenes/world/floor.tscn" id="8_m80gr"]
 [ext_resource type="PackedScene" uid="uid://71s20u3mwjvs" path="res://scenes/drum_machine/drum_machine.tscn" id="9_voxya"]
@@ -35,10 +33,6 @@ centered = false
 
 [node name="Player" parent="." instance=ExtResource("4_tn7kv")]
 position = Vector2(13, 158)
-
-[node name="StaticBody2D2" parent="." instance=ExtResource("5_iecl3")]
-position = Vector2(32, 160)
-script = ExtResource("6_xwif7")
 
 [node name="SPIKE" parent="." instance=ExtResource("7_vvh1e")]
 position = Vector2(560, 168)
