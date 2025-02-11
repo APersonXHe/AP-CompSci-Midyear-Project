@@ -2,6 +2,7 @@ extends CanvasLayer
 
 @onready var text_label = $VBoxContainer/Text
 @onready var back_button = $VBoxContainer/HBoxContainer/Back
+@onready var quit_button = $VBoxContainer/HBoxContainer/Quit
 
 func _ready() -> void:
 	update_label_text()
@@ -42,3 +43,7 @@ func update_label_text():
 		text_label.text = "Game Over"
 	elif GameManager.player_paused:
 		text_label.text = "Paused"
+		
+func _on_quit_pressed() -> void:
+	print("quit button pressed, quitting the game")
+	get_tree().quit()

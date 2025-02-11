@@ -29,6 +29,7 @@ offset_bottom = 161.0
 color = Color(7.70092e-07, 0.66286, 0.561611, 0.513726)
 
 [node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
 offset_top = -1.0
 offset_right = 312.0
 offset_bottom = 155.0
