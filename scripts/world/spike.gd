@@ -1,11 +1,13 @@
-extends StaticBody2D
+extends Area2D
 
+signal player_death
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _ready():
 	pass
+
+func _on_body_entered(body):
+	if body.is_in_group("player"):  # Ensure the player is in the "player" group
+		print("Player died lol")
+		GameManager.player_death.emit()  # Emit the death signal
+		GameManager.player_dead = true
+		#get_tree().paused = true

@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_epa68"]
 size = Vector2(16, 16)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 floor_snap_length = 2.0
 script = ExtResource("1_cd307")
 
@@ -19,4 +19,5 @@ shape = SubResource("RectangleShape2D_epa68")
 scale = Vector2(0.125, 0.125)
 texture = ExtResource("1_ep2ve")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." groups=["player"]]
+position = Vector2(60, -6)

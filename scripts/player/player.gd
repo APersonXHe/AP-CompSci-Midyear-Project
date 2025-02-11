@@ -18,8 +18,8 @@ func _physics_process(delta: float) -> void: # delta i think is time? not too su
 
 	apply_friction(delta)
 	move_and_slide() # takes velocity and moves character by that velocity while also colliding (sliding) on static bodies
-	if is_on_spike():
-		reset_game()
+	#if is_on_spike():
+		#reset_game()
 # move_and_slide multiplies by delta
 
 
@@ -36,6 +36,7 @@ func handle_jump():
 func apply_friction(delta):
 	velocity.x = move_toward(velocity.x, 0, FRICTION * delta)
 	
+"""
 func is_on_spike() -> bool:
 	# Check for collision with spikes
 	var collision = get_slide_collision(0)
@@ -46,6 +47,7 @@ func is_on_spike() -> bool:
 			print("Collision with spike detected")
 			return true
 	return false
+"""
 
 # Reset the game and respawn the player at the start position
 func reset_game():

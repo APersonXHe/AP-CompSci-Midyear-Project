@@ -1,0 +1,59 @@
+[gd_scene load_steps=12 format=3 uid="uid://v6gusyi768gk"]
+
+[ext_resource type="Script" path="res://scripts/world/parallax.gd" id="1_tdmv4"]
+[ext_resource type="Texture2D" uid="uid://1ppwk1a1fd4c" path="res://assets/sprites/background/sky.png" id="2_0p3dx"]
+[ext_resource type="Texture2D" uid="uid://c27dgn6a43bn6" path="res://assets/sprites/background/mountains.png" id="3_2k2s4"]
+[ext_resource type="PackedScene" uid="uid://bbj3ghmos7sya" path="res://scenes/player/player.tscn" id="4_f1882"]
+[ext_resource type="PackedScene" uid="uid://bd3yvxoqa54oh" path="res://scenes/world/square_block.tscn" id="5_0hioe"]
+[ext_resource type="AudioStream" uid="uid://b5g4khmeuf4o6" path="res://assets/audio/Robert Miles - Children_ReducedLength.wav" id="5_hlm6b"]
+[ext_resource type="Script" path="res://scripts/world/static_body_2d.gd" id="6_phrkh"]
+[ext_resource type="PackedScene" uid="uid://c8ytpxskly7h6" path="res://scenes/world/spike.tscn" id="7_y0ufd"]
+[ext_resource type="PackedScene" uid="uid://b2govl64kjjal" path="res://scenes/world/floor.tscn" id="8_fy7mx"]
+[ext_resource type="PackedScene" uid="uid://71s20u3mwjvs" path="res://scenes/drum_machine/drum_machine.tscn" id="9_jjnti"]
+[ext_resource type="PackedScene" uid="uid://c7dy3i876k4jn" path="res://scenes/world/retry_pause_menu.tscn" id="11_b8doj"]
+
+[node name="Parallax" type="Node2D"]
+script = ExtResource("1_tdmv4")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Sky" type="ParallaxLayer" parent="ParallaxBackground"]
+texture_filter = 1
+motion_scale = Vector2(0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Sky"]
+texture_filter = 1
+texture = ExtResource("2_0p3dx")
+centered = false
+
+[node name="Near Mountains" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(320, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Near Mountains"]
+texture_filter = 1
+texture = ExtResource("3_2k2s4")
+centered = false
+
+[node name="Player" parent="." instance=ExtResource("4_f1882")]
+position = Vector2(13, 158)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Player"]
+position = Vector2(-24, -120)
+stream = ExtResource("5_hlm6b")
+autoplay = true
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("5_0hioe")]
+position = Vector2(32, 160)
+script = ExtResource("6_phrkh")
+
+[node name="SPIKE" parent="." instance=ExtResource("7_y0ufd")]
+position = Vector2(560, 168)
+
+[node name="FLOOR" parent="." instance=ExtResource("8_fy7mx")]
+position = Vector2(8, 176)
+
+[node name="DrumMachine" parent="." instance=ExtResource("9_jjnti")]
+position = Vector2(162, 151)
+
+[node name="RetryPauseMenu" parent="." instance=ExtResource("11_b8doj")]
+visible = false
