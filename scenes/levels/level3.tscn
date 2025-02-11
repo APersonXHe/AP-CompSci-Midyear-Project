@@ -1,0 +1,143 @@
+[gd_scene load_steps=26 format=3 uid="uid://308k8myhlsao"]
+
+[ext_resource type="Script" path="res://scripts/levels/level_3.gd" id="1_mvkox"]
+[ext_resource type="Texture2D" uid="uid://dd8vmwnpkwhib" path="res://assets/sprites/background/mt_fuji.jpg" id="2_yil7o"]
+[ext_resource type="Texture2D" uid="uid://612elbq5quvb" path="res://assets/sprites/background/sakura_highres.png" id="3_1usia"]
+[ext_resource type="PackedScene" uid="uid://bbj3ghmos7sya" path="res://scenes/player/player.tscn" id="4_2o4dx"]
+[ext_resource type="PackedScene" uid="uid://bd3yvxoqa54oh" path="res://scenes/world/square_block.tscn" id="5_vm3rq"]
+[ext_resource type="Script" path="res://scripts/world/static_body_2d.gd" id="6_tkmxi"]
+[ext_resource type="PackedScene" uid="uid://c8ytpxskly7h6" path="res://scenes/world/spike.tscn" id="7_hqseb"]
+[ext_resource type="PackedScene" uid="uid://71s20u3mwjvs" path="res://scenes/drum_machine/drum_machine.tscn" id="9_wmumq"]
+[ext_resource type="PackedScene" uid="uid://c7dy3i876k4jn" path="res://scenes/world/retry_pause_menu.tscn" id="10_sohvn"]
+[ext_resource type="Shader" path="res://shaders/water.gdshader" id="11_mta6q"]
+[ext_resource type="Texture2D" uid="uid://bdo1vyudt4cv3" path="res://assets/sprites/background/white_rectangle.png" id="12_pwgkh"]
+[ext_resource type="PackedScene" uid="uid://cqidg1ja24ldy" path="res://scenes/world/level3_floor.tscn" id="12_xilb2"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_jhe84"]
+frequency = 0.03
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_sykrd"]
+seamless = true
+noise = SubResource("FastNoiseLite_jhe84")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_asyk6"]
+shader = ExtResource("11_mta6q")
+shader_parameter/water_color = Color(0, 0.154421, 0.274569, 1)
+shader_parameter/wave_noise = SubResource("NoiseTexture2D_sykrd")
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_gg0gr"]
+blend_mode = 1
+
+[sub_resource type="Curve" id="Curve_qd1qo"]
+max_value = 0.3
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.1875, 0.138462), 0.0, 0.0, 0, 0, Vector2(0.333333, 0.201099), 0.0, 0.0, 0, 0, Vector2(0.5625, 0.207692), 0.0, 0.0, 0, 0, Vector2(0.75, 0.204396), 0.0, 0.0, 0, 0, Vector2(0.854167, 0.135165), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 7
+
+[sub_resource type="CurveTexture" id="CurveTexture_ktetg"]
+curve = SubResource("Curve_qd1qo")
+
+[sub_resource type="Gradient" id="Gradient_se6iu"]
+colors = PackedColorArray(1, 1, 1, 0.0784314, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_kmqvt"]
+gradient = SubResource("Gradient_se6iu")
+
+[sub_resource type="Curve" id="Curve_slqcs"]
+max_value = 3.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_5b57k"]
+max_value = 30.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.104167, 16.1538), 0.0, 0.0, 0, 0, Vector2(0.458333, 22.0879), 0.0, 0.0, 0, 0, Vector2(1, 22.7473), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Curve" id="Curve_by220"]
+max_value = 3.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_miwfv"]
+curve_x = SubResource("Curve_slqcs")
+curve_y = SubResource("Curve_5b57k")
+curve_z = SubResource("Curve_by220")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_i6n0b"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(200, -200, 0)
+emission_shape = 3
+emission_box_extents = Vector3(500, 1, 1)
+gravity = Vector3(0, 3000, 0)
+scale_min = 2.2
+scale_max = 2.2
+scale_over_velocity_curve = SubResource("CurveXYZTexture_miwfv")
+color_initial_ramp = SubResource("GradientTexture1D_kmqvt")
+alpha_curve = SubResource("CurveTexture_ktetg")
+
+[node name="Parallax" type="Node2D"]
+script = ExtResource("1_mvkox")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Sky" type="ParallaxLayer" parent="ParallaxBackground"]
+texture_filter = 1
+motion_scale = Vector2(0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Sky"]
+texture_filter = 1
+position = Vector2(1, -11)
+scale = Vector2(0.221993, 0.269287)
+texture = ExtResource("2_yil7o")
+centered = false
+
+[node name="Near Mountains" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(320, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Near Mountains"]
+texture_filter = 1
+position = Vector2(55, -18)
+scale = Vector2(0.379343, 0.419971)
+texture = ExtResource("3_1usia")
+centered = false
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/Near Mountains"]
+position = Vector2(264.5, 119)
+scale = Vector2(0.27, 0.272)
+texture = ExtResource("3_1usia")
+
+[node name="Sprite2D3" type="Sprite2D" parent="ParallaxBackground/Near Mountains"]
+position = Vector2(49, 125)
+scale = Vector2(0.27, 0.27)
+texture = ExtResource("3_1usia")
+
+[node name="Player" parent="." instance=ExtResource("4_2o4dx")]
+position = Vector2(11, 163)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("5_vm3rq")]
+position = Vector2(32, 161)
+script = ExtResource("6_tkmxi")
+
+[node name="SPIKE" parent="." instance=ExtResource("7_hqseb")]
+position = Vector2(560, 168)
+
+[node name="DrumMachine" parent="." instance=ExtResource("9_wmumq")]
+position = Vector2(162, 151)
+
+[node name="RetryPauseMenu" parent="." instance=ExtResource("10_sohvn")]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_asyk6")
+position = Vector2(276.5, 231.25)
+scale = Vector2(3.8984, 0.782051)
+texture = ExtResource("12_pwgkh")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_gg0gr")
+amount = 200
+process_material = SubResource("ParticleProcessMaterial_i6n0b")
+preprocess = 0.5
+visibility_rect = Rect2(-100, -50, 750, 400)
+
+[node name="FLOOR" parent="." instance=ExtResource("12_xilb2")]
+position = Vector2(8, 172)

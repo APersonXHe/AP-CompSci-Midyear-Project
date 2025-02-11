@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://v6gusyi768gk"]
 
-[ext_resource type="Script" path="res://scripts/world/parallax.gd" id="1_tdmv4"]
+[ext_resource type="Script" path="res://scripts/levels/level_1.gd" id="1_tdmv4"]
 [ext_resource type="Texture2D" uid="uid://1ppwk1a1fd4c" path="res://assets/sprites/background/sky.png" id="2_0p3dx"]
 [ext_resource type="Texture2D" uid="uid://c27dgn6a43bn6" path="res://assets/sprites/background/mountains.png" id="3_2k2s4"]
 [ext_resource type="PackedScene" uid="uid://bbj3ghmos7sya" path="res://scenes/player/player.tscn" id="4_f1882"]

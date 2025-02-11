@@ -23,10 +23,11 @@ func _process(delta: float) -> void:
 
 func _on_retry_pressed() -> void:
 	#get_tree().reload_current_scene()
-	get_tree().change_scene_to_file("res://scenes/levels/level1.tscn")
+	get_tree().change_scene_to_file(GameManager.current_level)
 
 
 func _on_back_pressed() -> void:
+	GameManager.current_level = ""
 	if GameManager.player_dead:
 		print("Back Button pressed: player state = dead")
 		get_tree().change_scene_to_file("res://scenes/main_menu/main_menu.tscn")  # Go to the main menu
