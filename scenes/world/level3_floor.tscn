@@ -1,20 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://cqidg1ja24ldy"]
+[gd_scene load_steps=4 format=3 uid="uid://cqidg1ja24ldy"]
 
+[ext_resource type="Script" path="res://scripts/world/level3_floor.gd" id="1_1xacc"]
 [ext_resource type="Texture2D" uid="uid://brnowa16q8thy" path="res://assets/sprites/background/pixelated_bamboo_texture.png" id="1_nlrlk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2i7tv"]
-size = Vector2(328, 16)
+size = Vector2(452, 16)
 
 [node name="FLOOR" type="StaticBody2D"]
+script = ExtResource("1_1xacc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-8, -2)
-scale = Vector2(0.636893, 0.0457143)
+scale = Vector2(0.87767, 0.0457143)
 texture = ExtResource("1_nlrlk")
 centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(156, 6)
+position = Vector2(218, 6)
 shape = SubResource("RectangleShape2D_2i7tv")
 
 [node name="Polygon2D" type="Polygon2D" parent="CollisionShape2D"]

@@ -63,13 +63,13 @@ curve_y = SubResource("Curve_5b57k")
 curve_z = SubResource("Curve_by220")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_i6n0b"]
+particle_flag_align_y = true
 particle_flag_disable_z = true
 emission_shape_offset = Vector3(200, -200, 0)
 emission_shape = 3
 emission_box_extents = Vector3(500, 1, 1)
-gravity = Vector3(0, 3000, 0)
-scale_min = 2.2
-scale_max = 2.2
+gravity = Vector3(-500, 3000, 0)
+scale_max = 1.5
 scale_over_velocity_curve = SubResource("CurveXYZTexture_miwfv")
 color_initial_ramp = SubResource("GradientTexture1D_kmqvt")
 alpha_curve = SubResource("CurveTexture_ktetg")
@@ -118,7 +118,13 @@ position = Vector2(32, 161)
 script = ExtResource("6_tkmxi")
 
 [node name="SPIKE" parent="." instance=ExtResource("7_hqseb")]
-position = Vector2(560, 168)
+position = Vector2(454, 127)
+
+[node name="SPIKE2" parent="." instance=ExtResource("7_hqseb")]
+position = Vector2(194, 163)
+
+[node name="SPIKE3" parent="." instance=ExtResource("7_hqseb")]
+position = Vector2(209, 163)
 
 [node name="DrumMachine" parent="." instance=ExtResource("9_wmumq")]
 position = Vector2(162, 151)
@@ -134,10 +140,14 @@ texture = ExtResource("12_pwgkh")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 material = SubResource("CanvasItemMaterial_gg0gr")
-amount = 200
+amount = 500
 process_material = SubResource("ParticleProcessMaterial_i6n0b")
 preprocess = 0.5
 visibility_rect = Rect2(-100, -50, 750, 400)
 
 [node name="FLOOR" parent="." instance=ExtResource("12_xilb2")]
-position = Vector2(8, 172)
+position = Vector2(-82, 172)
+
+[node name="FLOOR2" parent="." instance=ExtResource("12_xilb2")]
+position = Vector2(366, 137)
+scale = Vector2(0.5, 1)
