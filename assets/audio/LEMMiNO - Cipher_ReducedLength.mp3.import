@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://g2wdop3bgk1o"
+path="res://.godot/imported/LEMMiNO - Cipher_ReducedLength.mp3-30bc42d9f4bdf379acc2be0ab6810732.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/LEMMiNO - Cipher_ReducedLength.mp3"
+dest_files=["res://.godot/imported/LEMMiNO - Cipher_ReducedLength.mp3-30bc42d9f4bdf379acc2be0ab6810732.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

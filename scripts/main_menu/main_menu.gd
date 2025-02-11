@@ -1,7 +1,7 @@
 extends Node2D
 
 func _ready() -> void:
-	GameManager.current_level = ""
+	GameManager.current_level = "res://scenes/main_menu/main_menu.tscn"
 	GameManager.player_dead = false
 	AudioManager.play_music("res://assets/audio/F-777 - Dance of The Violins.mp3")
 

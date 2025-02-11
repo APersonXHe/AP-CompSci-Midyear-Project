@@ -60,3 +60,14 @@ func reset_game():
 
 func set_speed(new_speed):
 	speed = new_speed
+
+func freeze():
+	velocity = Vector2.ZERO  # Stop all movement
+	speed = 0  # Prevent movement updates
+	set_process(false)  # Disable _process (stops input handling)
+	set_physics_process(false)  # Disable physics updates (stops gravity/jump)
+	
+func unfreeze():
+	speed = ORIGINALSPEED  # Restore movement
+	set_process(true)  # Re-enable input handling
+	set_physics_process(true)  # Re-enable physics

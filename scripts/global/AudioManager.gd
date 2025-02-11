@@ -1,10 +1,11 @@
 extends Node
 
-var music_player: AudioStreamPlayer
+var music_player: AudioStreamPlayer2D
 var current_song: String = ""  # This will store the name or path of the current song.
+var pause_position = 0
 
 func _ready():
-	music_player = AudioStreamPlayer.new()
+	music_player = AudioStreamPlayer2D.new()
 	add_child(music_player)
 
 # Function to play a song
@@ -23,9 +24,10 @@ func stop_music():
 
 # Function to pause the music
 func pause_music():
-	music_player.stop()  # Stop the music without changing the song
+	pause_position = music_player.get_playback_position()
+	music_player.playing = false
 
 # Function to resume the music (from the current position)
 func resume_music():
 	if current_song != "":
-		play_music(current_song)  # Resume the song from where it stopped
+		music_player.play(pause_position)

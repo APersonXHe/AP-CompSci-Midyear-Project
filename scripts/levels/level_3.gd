@@ -9,12 +9,12 @@ func _ready():  # this is just placeholder code demonstrating how you can code t
 	GameManager.current_level = "res://scenes/levels/level3.tscn"
 	AudioManager.stop_music()
 	AudioManager.play_music("res://assets/audio/ParagonX9 - Chaoz Japan.mp3", false)
-	print("Level 1 begun")
-	print($RetryPauseMenu)
-	print("Retry menu visibility at start:", retry_menu.visible)
+	#print("Level 3 begun")
+	#print($RetryPauseMenu)
+	#print("Retry menu visibility at start:", retry_menu.visible)
 	GameManager.player_death.connect(_on_player_died)  # Listen for death signal
 	retry_menu.visible = false  # Hide retry menu initially
-	print("Retry menu visibility at start after set to false:", retry_menu.visible)
+	#print("Retry menu visibility at start after set to false:", retry_menu.visible)
 	for i in range(5):  # Create 5 blocks
 		var block = block_scene.instantiate()
 		block.position = Vector2((i+1) * 100, 160)  # Position them with some space between
@@ -24,12 +24,14 @@ func _ready():  # this is just placeholder code demonstrating how you can code t
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if retry_menu.visible:
-		player.set_speed(0)
+		player.freeze()
 	else:
+		player.unfreeze()
 		player.set_speed(player.ORIGINALSPEED)
 	if Input.is_action_just_pressed("ui_cancel"):  # 'ui_cancel' maps to 'esc' by default in Input Map
 		#get_tree().change_scene_to_file("res://scenes/world/retry_pause_menu.tscn")
 		#player.set_speed(0)
+		AudioManager.pause_music()
 		GameManager.player_pause.emit()  # Emit the death signal
 		GameManager.player_paused = true
 		retry_menu.visible = true
@@ -38,7 +40,8 @@ func go_to_main_menu() -> void:
 	get_tree().change_scene_to_file("res://scenes/main_menu/main_menu.tscn")
 
 func _on_player_died():
-	print("Player died - Level1")
+	#print("Player died - Level1")
 	#get_tree().change_scene_to_file("res://scenes/world/retry_pause_menu.tscn")
 	#player.set_speed(0)
+	AudioManager.stop_music()
 	retry_menu.visible = true  # Show retry menu

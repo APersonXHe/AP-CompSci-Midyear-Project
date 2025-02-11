@@ -16,5 +16,5 @@ func _on_level_3_pressed() -> void:
 
 
 func _on_back_pressed() -> void:
-	GameManager.current_level = ""
+	GameManager.current_level = "res://scenes/main_menu/main_menu.tscn"
 	get_tree().change_scene_to_file("res://scenes/main_menu/main_menu.tscn")
