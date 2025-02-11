@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://c1oedafq8h5pg"]
 
-[ext_resource type="Texture2D" uid="uid://dcsrio27mr2m5" path="res://assets/sprites/main_menu/PLACEHOLDER_BG.jpg" id="1_lfo4d"]
 [ext_resource type="Script" path="res://scripts/main_menu/level_select.gd" id="1_u3b4s"]
 [ext_resource type="FontFile" uid="uid://tjda5mp3yehk" path="res://assets/fonts/Silkscreen-Bold.ttf" id="2_7awlf"]
+[ext_resource type="Texture2D" uid="uid://dfrsvp0axo7oe" path="res://assets/sprites/background/pixelated_music_bg1.png" id="2_857xt"]
 [ext_resource type="FontFile" uid="uid://bkxjqx6usq3g4" path="res://assets/fonts/Silkscreen-Regular.ttf" id="3_njgn2"]
 
 [node name="LevelSelect" type="Node2D"]
@@ -11,11 +11,13 @@ script = ExtResource("1_u3b4s")
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 320.0
 offset_bottom = 180.0
-texture = ExtResource("1_lfo4d")
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("2_857xt")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_top = 39.0
 offset_right = 321.0
-offset_bottom = 200.0
+offset_bottom = 177.0
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
@@ -34,5 +36,14 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("3_njgn2")
 text = "LEVEL 2"
 
+[node name="Back" type="Button" parent="."]
+offset_top = 165.0
+offset_right = 56.0
+offset_bottom = 194.0
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("3_njgn2")
+text = "BACK"
+
 [connection signal="pressed" from="VBoxContainer/Level1" to="." method="_on_level_1_pressed"]
 [connection signal="pressed" from="VBoxContainer/Level2" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://dy30yw8rgbrmd"]
 
 [ext_resource type="Script" path="res://scripts/main_menu/main_menu.gd" id="1_wfp4i"]
+[ext_resource type="Texture2D" uid="uid://dfrsvp0axo7oe" path="res://assets/sprites/background/pixelated_music_bg1.png" id="2_o03eh"]
 [ext_resource type="FontFile" uid="uid://tjda5mp3yehk" path="res://assets/fonts/Silkscreen-Bold.ttf" id="2_rtsva"]
-[ext_resource type="Texture2D" uid="uid://dkqg7oo50vid2" path="res://assets/sprites/background/pxArt.png" id="2_yu3w0"]
 [ext_resource type="Texture2D" uid="uid://d4frbsd40xsel" path="res://assets/sprites/main_menu/PLACEHOLDER_IMG2.png" id="3_ialcv"]
 [ext_resource type="FontFile" uid="uid://bkxjqx6usq3g4" path="res://assets/fonts/Silkscreen-Regular.ttf" id="4_n1s6v"]
 
@@ -13,10 +13,12 @@ font = ExtResource("2_rtsva")
 script = ExtResource("1_wfp4i")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 3826.0
-offset_bottom = 2113.0
+offset_left = -12.0
+offset_top = -2.0
+offset_right = 3814.0
+offset_bottom = 2111.0
 scale = Vector2(0.09, 0.09)
-texture = ExtResource("2_yu3w0")
+texture = ExtResource("2_o03eh")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 offset_right = 320.0
@@ -35,9 +37,9 @@ layout_mode = 2
 
 [node name="Title" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-text = "BeatBound
+text = "
+BeatBound
 Odyssey
-
 "
 label_settings = SubResource("LabelSettings_u64td")
 horizontal_alignment = 1
