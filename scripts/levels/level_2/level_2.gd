@@ -6,7 +6,7 @@ var block_scene = preload("res://scenes/world/spike.tscn")
 @onready var player = $Player
 
 func _ready():  # this is just placeholder code demonstrating how you can code the creation of multiple blocks, such that you don't have to instance them into parallax every time.
-	GameManager.current_level = "res://scenes/levels/level2.tscn"
+	GameManager.current_level = "res://scenes/levels/level_2/level_2.tscn"
 	AudioManager.stop_music()
 	AudioManager.play_music("res://assets/audio/Robert Miles - Children_ReducedLength.mp3", false)
 	#print($RetryPauseMenu)

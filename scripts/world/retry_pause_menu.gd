@@ -13,7 +13,7 @@ func _process(delta: float) -> void:
 	update_label_text()
 	if GameManager.player_dead:
 		# "back" button says "menu" instead
-		AudioManager.play_music("res://assets/audio/LEMMiNO - Cipher_ReducedLength.mp3", false)
+		AudioManager.play_music("res://assets/audio/LEMMiNO - Cipher_ReducedLength.mp3", true)
 		back_button.text = "Menu"
 	elif GameManager.player_paused:
 		# "back" button says "back"

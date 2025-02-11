@@ -1,10 +1,11 @@
 extends CharacterBody2D #extends all of the stuff from CharacterBody2D
 
-const ORIGINALSPEED = 120.0
+var ORIGINALSPEED = 120.0
 const JUMP_VELOCITY = -300.0  # negative going up for y, positive going down for y. x is normal left right
 const FRICTION = 600
 
 var speed = ORIGINALSPEED
+var speed_before_pause = speed
 var start_position : Vector2
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -12,7 +13,6 @@ func _ready():
 	start_position = position
 	
 func _physics_process(delta: float) -> void: # delta i think is time? not too sure
-
 	handle_jump()
 	apply_gravity(delta)
 	
@@ -36,7 +36,7 @@ func handle_jump():
 
 
 func apply_friction(delta):
-	velocity.x = move_toward(velocity.x, 0, FRICTION * delta)
+	velocity.x = move_toward(velocity.x, speed, FRICTION * delta)
 	
 """
 func is_on_spike() -> bool:
@@ -58,8 +58,17 @@ func reset_game():
 	# Optionally, reset the background or other game elements
 	# get_tree().change_scene_to_file("res://scenes/main_menu/main_menu.tscn")
 
+func add_speed(more_speed):
+	print("Adding speed: ", more_speed)
+	speed += more_speed
+	speed_before_pause = speed
+	print("New speed after adding: ", speed) 
+
 func set_speed(new_speed):
+	print("Setting new speed: ", new_speed) 
 	speed = new_speed
+	speed_before_pause = speed
+	print("New speed set to: ", speed) 
 
 func freeze():
 	velocity = Vector2.ZERO  # Stop all movement
@@ -68,6 +77,6 @@ func freeze():
 	set_physics_process(false)  # Disable physics updates (stops gravity/jump)
 	
 func unfreeze():
-	speed = ORIGINALSPEED  # Restore movement
+	speed = speed_before_pause  # Restore movement
 	set_process(true)  # Re-enable input handling
 	set_physics_process(true)  # Re-enable physics

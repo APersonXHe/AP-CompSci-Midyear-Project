@@ -1,15 +1,17 @@
-[gd_scene load_steps=24 format=3 uid="uid://308k8myhlsao"]
+[gd_scene load_steps=26 format=3 uid="uid://308k8myhlsao"]
 
-[ext_resource type="Script" path="res://scripts/levels/level_3.gd" id="1_mvkox"]
-[ext_resource type="Texture2D" uid="uid://dd8vmwnpkwhib" path="res://assets/sprites/background/mt_fuji.jpg" id="2_yil7o"]
-[ext_resource type="Texture2D" uid="uid://612elbq5quvb" path="res://assets/sprites/background/sakura_highres.png" id="3_1usia"]
-[ext_resource type="PackedScene" uid="uid://bbj3ghmos7sya" path="res://scenes/player/player.tscn" id="4_2o4dx"]
-[ext_resource type="PackedScene" uid="uid://c8ytpxskly7h6" path="res://scenes/world/spike.tscn" id="7_hqseb"]
-[ext_resource type="PackedScene" uid="uid://c7dy3i876k4jn" path="res://scenes/world/retry_pause_menu.tscn" id="10_sohvn"]
-[ext_resource type="Shader" path="res://shaders/water.gdshader" id="11_mta6q"]
-[ext_resource type="PackedScene" uid="uid://eeowqwpvxbvc" path="res://scenes/world/void.tscn" id="11_r5em4"]
-[ext_resource type="Texture2D" uid="uid://bdo1vyudt4cv3" path="res://assets/sprites/background/white_rectangle.png" id="12_pwgkh"]
-[ext_resource type="PackedScene" uid="uid://cqidg1ja24ldy" path="res://scenes/world/level3_floor.tscn" id="12_xilb2"]
+[ext_resource type="Script" path="res://scripts/levels/level_3/level_3.gd" id="1_p4gtc"]
+[ext_resource type="Texture2D" uid="uid://dd8vmwnpkwhib" path="res://assets/sprites/background/mt_fuji.jpg" id="2_2n0t1"]
+[ext_resource type="Texture2D" uid="uid://612elbq5quvb" path="res://assets/sprites/background/sakura_highres.png" id="3_3worm"]
+[ext_resource type="PackedScene" uid="uid://bbj3ghmos7sya" path="res://scenes/player/player.tscn" id="4_q5gmq"]
+[ext_resource type="PackedScene" uid="uid://c8ytpxskly7h6" path="res://scenes/world/spike.tscn" id="5_6we6i"]
+[ext_resource type="PackedScene" uid="uid://c7dy3i876k4jn" path="res://scenes/world/retry_pause_menu.tscn" id="6_m8qna"]
+[ext_resource type="Shader" path="res://shaders/water.gdshader" id="7_4hxrs"]
+[ext_resource type="Texture2D" uid="uid://bdo1vyudt4cv3" path="res://assets/sprites/background/white_rectangle.png" id="8_832is"]
+[ext_resource type="PackedScene" uid="uid://cqidg1ja24ldy" path="res://scenes/levels/level_3/level_3_static_platform.tscn" id="9_yrfak"]
+[ext_resource type="PackedScene" uid="uid://eeowqwpvxbvc" path="res://scenes/world/void.tscn" id="10_72k6a"]
+[ext_resource type="PackedScene" uid="uid://d3bgdcum8jp5y" path="res://scenes/world/speed_portal.tscn" id="11_07xnb"]
+[ext_resource type="PackedScene" uid="uid://2k5mt1r1jp2s" path="res://scenes/world/slow_portal.tscn" id="11_a1xhy"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_jhe84"]
 frequency = 0.03
@@ -19,7 +21,7 @@ seamless = true
 noise = SubResource("FastNoiseLite_jhe84")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_asyk6"]
-shader = ExtResource("11_mta6q")
+shader = ExtResource("7_4hxrs")
 shader_parameter/water_color = Color(0, 0.154421, 0.274569, 1)
 shader_parameter/wave_noise = SubResource("NoiseTexture2D_sykrd")
 
@@ -73,7 +75,7 @@ color_initial_ramp = SubResource("GradientTexture1D_kmqvt")
 alpha_curve = SubResource("CurveTexture_ktetg")
 
 [node name="Parallax" type="Node2D"]
-script = ExtResource("1_mvkox")
+script = ExtResource("1_p4gtc")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -84,8 +86,8 @@ motion_scale = Vector2(0, 0)
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Sky"]
 texture_filter = 1
 position = Vector2(1, -11)
-scale = Vector2(0.221993, 0.269287)
-texture = ExtResource("2_yil7o")
+scale = Vector2(0.221993, 0.305677)
+texture = ExtResource("2_2n0t1")
 centered = false
 
 [node name="Background" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -93,41 +95,44 @@ motion_mirroring = Vector2(320, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Background"]
 texture_filter = 1
-position = Vector2(55, -19)
+position = Vector2(55, -15)
 scale = Vector2(0.379343, 0.419971)
-texture = ExtResource("3_1usia")
+texture = ExtResource("3_3worm")
 centered = false
 
 [node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/Background"]
-position = Vector2(264.5, 119)
+position = Vector2(264, 126)
 scale = Vector2(0.27, 0.272)
-texture = ExtResource("3_1usia")
+texture = ExtResource("3_3worm")
 
 [node name="Sprite2D3" type="Sprite2D" parent="ParallaxBackground/Background"]
 position = Vector2(49, 125)
 scale = Vector2(0.27, 0.27)
-texture = ExtResource("3_1usia")
+texture = ExtResource("3_3worm")
 
-[node name="Player" parent="." instance=ExtResource("4_2o4dx")]
+[node name="Player" parent="." instance=ExtResource("4_q5gmq")]
 position = Vector2(11, 163)
 
-[node name="SPIKE" parent="." instance=ExtResource("7_hqseb")]
-position = Vector2(454, 127)
+[node name="SPIKE" parent="." instance=ExtResource("5_6we6i")]
+position = Vector2(454, 129)
 
-[node name="SPIKE2" parent="." instance=ExtResource("7_hqseb")]
-position = Vector2(194, 163)
+[node name="SPIKE2" parent="." instance=ExtResource("5_6we6i")]
+position = Vector2(197, 172)
 
-[node name="SPIKE3" parent="." instance=ExtResource("7_hqseb")]
-position = Vector2(209, 163)
+[node name="SPIKE3" parent="." instance=ExtResource("5_6we6i")]
+position = Vector2(212, 172)
 
-[node name="RetryPauseMenu" parent="." instance=ExtResource("10_sohvn")]
+[node name="SPIKE4" parent="." instance=ExtResource("5_6we6i")]
+position = Vector2(596, 112)
+
+[node name="RetryPauseMenu" parent="." instance=ExtResource("6_m8qna")]
 visible = false
 
 [node name="Water" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_asyk6")
 position = Vector2(1340, 241)
 scale = Vector2(100, 0.944)
-texture = ExtResource("12_pwgkh")
+texture = ExtResource("8_832is")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 material = SubResource("CanvasItemMaterial_gg0gr")
@@ -136,13 +141,23 @@ process_material = SubResource("ParticleProcessMaterial_i6n0b")
 preprocess = 0.5
 visibility_rect = Rect2(-100, -50, 750, 400)
 
-[node name="FLOOR" parent="." instance=ExtResource("12_xilb2")]
-position = Vector2(-82, 172)
+[node name="FLOOR" parent="." instance=ExtResource("9_yrfak")]
+position = Vector2(-81, 180)
 
-[node name="FLOOR2" parent="." instance=ExtResource("12_xilb2")]
+[node name="FLOOR2" parent="." instance=ExtResource("9_yrfak")]
 position = Vector2(366, 137)
 scale = Vector2(0.5, 1)
 
-[node name="Void" parent="." instance=ExtResource("11_r5em4")]
+[node name="FLOOR3" parent="." instance=ExtResource("9_yrfak")]
+position = Vector2(591, 121)
+scale = Vector2(0.4, 1)
+
+[node name="Void" parent="." instance=ExtResource("10_72k6a")]
 position = Vector2(272, 207)
 scale = Vector2(100, 1)
+
+[node name="SlowPortal" parent="." instance=ExtResource("11_a1xhy")]
+position = Vector2(640, 94)
+
+[node name="SpeedPortal" parent="." instance=ExtResource("11_07xnb")]
+position = Vector2(250, 154)

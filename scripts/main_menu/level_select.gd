@@ -16,18 +16,18 @@ func _on_level_3_pressed() -> void:
 	
 
 func _change_scene_1():
-	GameManager.current_level = "res://scenes/levels/level1.tscn"
-	get_tree().change_scene_to_file("res://scenes/levels/level1.tscn")
+	GameManager.current_level = "res://scenes/levels/level_1/level_1.tscn"
+	get_tree().change_scene_to_file("res://scenes/levels/level_1/level_1.tscn")
 	
 
 func _change_scene_2():
-	GameManager.current_level = "res://scenes/levels/level2.tscn"
-	get_tree().change_scene_to_file("res://scenes/levels/level2.tscn")
+	GameManager.current_level = "res://scenes/levels/level_2/level_2.tscn"
+	get_tree().change_scene_to_file("res://scenes/levels/level_2/level_2.tscn")
 	
 
 func _change_scene_3():
-	GameManager.current_level = "res://scenes/levels/level3.tscn"
-	get_tree().change_scene_to_file("res://scenes/levels/level3.tscn")
+	GameManager.current_level = "res://scenes/levels/level_3/level_3.tscn"
+	get_tree().change_scene_to_file("res://scenes/levels/level_3/level_3.tscn")
 
 
 func _on_back_pressed() -> void:
