@@ -2,7 +2,7 @@ extends CanvasLayer
 
 @onready var text_label = $VBoxContainer/Text
 @onready var back_button = $VBoxContainer/HBoxContainer/Back
-@onready var quit_button = $VBoxContainer/HBoxContainer/Quit
+@onready var menu_button = $VBoxContainer/HBoxContainer/Menu
 
 func _ready() -> void:
 	update_label_text()
@@ -41,9 +41,14 @@ func _on_back_pressed() -> void:
 func update_label_text():
 	if GameManager.player_dead:
 		text_label.text = "Game Over"
+		menu_button.visible = false  
 	elif GameManager.player_paused:
 		text_label.text = "Paused"
+		menu_button.visible = true   
+	else:
+		menu_button.visible = false  
+
 		
-func _on_quit_pressed() -> void:
-	print("quit button pressed, quitting the game")
-	get_tree().quit()
+func _on_menu_pressed() -> void:
+	GameManager.current_level = "res://scenes/main_menu/main_menu.tscn"
+	get_tree().change_scene_to_file("res://scenes/main_menu/main_menu.tscn")
