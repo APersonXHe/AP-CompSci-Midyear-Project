@@ -1,11 +1,11 @@
 extends Node
 
-var music_player: AudioStreamPlayer2D
+var music_player: AudioStreamPlayer
 var current_song: String = ""  # This will store the name or path of the current song.
 var pause_position = 0
 
 func _ready():
-	music_player = AudioStreamPlayer2D.new()
+	music_player = AudioStreamPlayer.new()
 	add_child(music_player)
 
 # Function to play a song
