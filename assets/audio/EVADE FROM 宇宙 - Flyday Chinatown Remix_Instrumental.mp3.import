@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://casu8fxp4rctk"
+path="res://.godot/imported/EVADE FROM 宇宙 - Flyday Chinatown Remix_Instrumental.mp3-52ae92a0c5606df8251088a1490c3177.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/EVADE FROM 宇宙 - Flyday Chinatown Remix_Instrumental.mp3"
+dest_files=["res://.godot/imported/EVADE FROM 宇宙 - Flyday Chinatown Remix_Instrumental.mp3-52ae92a0c5606df8251088a1490c3177.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
