@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://djqpun3jfljya"]
+
+[ext_resource type="Texture2D" uid="uid://bmr7lpynftgrw" path="res://assets/sprites/background/124-1240056_neon-line-png-colorfulness-removebg-preview.png" id="1_lx4jk"]
+
+[node name="Floor green" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.00209, 0.864865)
+texture = ExtResource("1_lx4jk")
+centered = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, 8)
+polygon = PackedVector2Array(96, 88, 96, 128, 864, 128, 864, 88)
+
+[node name="Polygon2D" type="Polygon2D" parent="CollisionPolygon2D"]

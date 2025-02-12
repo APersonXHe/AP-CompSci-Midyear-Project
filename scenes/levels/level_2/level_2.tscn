@@ -1,14 +1,18 @@
-[gd_scene load_steps=10 format=3 uid="uid://galr2ycy0xho"]
+[gd_scene load_steps=14 format=3 uid="uid://galr2ycy0xho"]
 
 [ext_resource type="Script" path="res://scripts/levels/level_2/level_2.gd" id="1_aiox8"]
-[ext_resource type="Texture2D" uid="uid://1ppwk1a1fd4c" path="res://assets/sprites/background/sky.png" id="2_rln4y"]
+[ext_resource type="Texture2D" uid="uid://tvtpuuk0y3a" path="res://assets/sprites/background/OIP (5).jpg" id="2_gaoqi"]
 [ext_resource type="Texture2D" uid="uid://c27dgn6a43bn6" path="res://assets/sprites/background/mountains.png" id="3_5y074"]
 [ext_resource type="PackedScene" uid="uid://bbj3ghmos7sya" path="res://scenes/player/player.tscn" id="4_diofp"]
 [ext_resource type="PackedScene" uid="uid://b2govl64kjjal" path="res://scenes/world/floor.tscn" id="6_5jadr"]
 [ext_resource type="PackedScene" uid="uid://c7dy3i876k4jn" path="res://scenes/world/retry_pause_menu.tscn" id="8_gl1mm"]
 [ext_resource type="PackedScene" uid="uid://eeowqwpvxbvc" path="res://scenes/world/void.tscn" id="9_4el4l"]
 [ext_resource type="PackedScene" uid="uid://c883eqefvqjvf" path="res://scenes/world/victory_menu.tscn" id="9_4qr3o"]
+[ext_resource type="PackedScene" uid="uid://djqpun3jfljya" path="res://scenes/world/floor_green.tscn" id="9_ks15b"]
 [ext_resource type="PackedScene" uid="uid://dyd7exovoebl3" path="res://scenes/world/level_finish.tscn" id="10_2luj4"]
+[ext_resource type="PackedScene" uid="uid://dhqm6y73ribvy" path="res://scenes/world/gravity_up_portal.tscn" id="11_6g3ml"]
+[ext_resource type="PackedScene" uid="uid://c8ytpxskly7h6" path="res://scenes/world/spike.tscn" id="12_exfi7"]
+[ext_resource type="PackedScene" uid="uid://bmy2kltdc8yqo" path="res://scenes/world/gravity_down_portal.tscn" id="13_t8see"]
 
 [node name="Parallax" type="Node2D"]
 script = ExtResource("1_aiox8")
@@ -20,8 +24,9 @@ texture_filter = 1
 motion_scale = Vector2(0, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Sky"]
-texture_filter = 1
-texture = ExtResource("2_rln4y")
+position = Vector2(0, 3.8147e-06)
+scale = Vector2(0.675106, 0.902256)
+texture = ExtResource("2_gaoqi")
 centered = false
 
 [node name="Near Mountains" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -35,9 +40,6 @@ centered = false
 [node name="Player" parent="." instance=ExtResource("4_diofp")]
 position = Vector2(13, 158)
 
-[node name="FLOOR" parent="." instance=ExtResource("6_5jadr")]
-position = Vector2(8, 176)
-
 [node name="RetryPauseMenu" parent="." instance=ExtResource("8_gl1mm")]
 visible = false
 
@@ -45,8 +47,312 @@ visible = false
 visible = false
 
 [node name="LevelFinish" parent="." instance=ExtResource("10_2luj4")]
-position = Vector2(591, 129)
+position = Vector2(2769, 119)
 
 [node name="Void" parent="." instance=ExtResource("9_4el4l")]
 position = Vector2(0, 328)
+scale = Vector2(20, 1)
+
+[node name="Floor green" parent="." instance=ExtResource("9_ks15b")]
+position = Vector2(-24, 144)
+scale = Vector2(0.25, 0.25)
+
+[node name="FLOOR" parent="." instance=ExtResource("6_5jadr")]
+position = Vector2(312, 56)
+rotation = 3.14159
+scale = Vector2(0.25, 1)
+
+[node name="GravityUpPortal" parent="." instance=ExtResource("11_6g3ml")]
+position = Vector2(128, 144)
+
+[node name="SPIKE" parent="." instance=ExtResource("12_exfi7")]
+position = Vector2(192, 72)
+rotation = 3.14159
+
+[node name="SPIKE2" parent="." instance=ExtResource("12_exfi7")]
+position = Vector2(208, 72)
+rotation = 3.14159
+
+[node name="GravityDownPortal" parent="." instance=ExtResource("13_t8see")]
+position = Vector2(280, 88)
+
+[node name="Floor green2" parent="." instance=ExtResource("9_ks15b")]
+position = Vector2(208, 144)
+scale = Vector2(0.5, 0.25)
+
+[node name="SPIKE3" parent="." instance=ExtResource("12_exfi7")]
+position = Vector2(344, 160)
+
+[node name="SPIKE4" parent="." instance=ExtResource("12_exfi7")]
+position = Vector2(360, 160)
+
+[node name="Floor green3" parent="." instance=ExtResource("9_ks15b")]
+position = Vector2(416, 104)
+scale = Vector2(0.25, 0.25)
+
+[node name="SPIKE5" parent="." instance=ExtResource("12_exfi7")]
+position = Vector2(456, 160)
+
+[node name="SPIKE6" parent="." instance=ExtResource("12_exfi7")]
+position = Vector2(504, 160)
+
+[node name="SPIKE7" parent="." instance=ExtResource("12_exfi7")]
+position = Vector2(488, 160)
+
+[node name="SPIKE8" parent="." instance=ExtResource("12_exfi7")]
+position = Vector2(472, 160)
+
+[node name="SPIKE9" parent="." instance=ExtResource("12_exfi7")]
+position = Vector2(568, 160)
+
+[node name="SPIKE10" parent="." instance=ExtResource("12_exfi7")]
+position = Vector2(552, 160)
+
+[node name="SPIKE11" parent="." instance=ExtResource("12_exfi7")]
+position = Vector2(536, 160)
+
+[node name="SPIKE12" parent="." instance=ExtResource("12_exfi7")]
+position = Vector2(520, 160)
+
+[node name="SPIKE13" parent="." instance=ExtResource("12_exfi7")]
+position = Vector2(584, 160)
+
+[node name="SPIKE14" parent="." instance=ExtResource("12_exfi7")]
+position = Vector2(600, 160)
+
+[node name="SPIKE15" parent="." instance=ExtResource("12_exfi7")]
+position = Vector2(616, 160)
+
+[node name="GravityUpPortal2" parent="." instance=ExtResource("11_6g3ml")]
+position = Vector2(512, 104)
+
+[node name="FLOOR2" parent="." instance=ExtResource("6_5jadr")]
+position = Vector2(872, 40)
+rotation = 3.14159
+scale = Vector2(0.5, 1)
+
+[node name="SPIKE16" parent="." instance=ExtResource("12_exfi7")]
+position = Vector2(696, 56)
+rotation = 3.14159
+
+[node name="SPIKE34" parent="." instance=ExtResource("12_exfi7")]
+position = Vector2(1528, 100)
+rotation = 3.14159
+
+[node name="SPIKE35" parent="." instance=ExtResource("12_exfi7")]
+position = Vector2(1544, 100)
+rotation = 3.14159
+
+[node name="SPIKE37" parent="." instance=ExtResource("12_exfi7")]
+position = Vector2(1813, 154)
+rotation = 3.14159
+
+[node name="SPIKE44" parent="." instance=ExtResource("12_exfi7")]
+position = Vector2(2353, 144)
+rotation = 3.14159
+
+[node name="SPIKE46" parent="." instance=ExtResource("12_exfi7")]
+position = Vector2(2561, 145)
+rotation = 3.14159
+
+[node name="SPIKE17" parent="." instance=ExtResource("12_exfi7")]
+position = Vector2(680, 56)
+rotation = 3.14159
+
+[node name="SPIKE18" parent="." instance=ExtResource("12_exfi7")]
+position = Vector2(592, 56)
+rotation = 3.14159
+
+[node name="SPIKE19" parent="." instance=ExtResource("12_exfi7")]
+position = Vector2(576, 56)
+rotation = 3.14159
+
+[node name="GravityDownPortal2" parent="." instance=ExtResource("13_t8see")]
+position = Vector2(784, 72)
+
+[node name="Floor green4" parent="." instance=ExtResource("9_ks15b")]
+position = Vector2(740, 144)
+scale = Vector2(0.25, 0.25)
+
+[node name="SPIKE20" parent="." instance=ExtResource("12_exfi7")]
+position = Vector2(846, 160)
+
+[node name="SPIKE21" parent="." instance=ExtResource("12_exfi7")]
+position = Vector2(861, 160)
+
+[node name="Floor green5" parent="." instance=ExtResource("9_ks15b")]
+position = Vector2(984, 120)
+scale = Vector2(0.1, 0.2)
+
+[node name="Floor green6" parent="." instance=ExtResource("9_ks15b")]
+position = Vector2(1096, 88)
+scale = Vector2(0.1, 0.25)
+
+[node name="Floor green7" parent="." instance=ExtResource("9_ks15b")]
+position = Vector2(1200, 64)
+scale = Vector2(0.1, 0.25)
+
+[node name="SPIKE22" parent="." instance=ExtResource("12_exfi7")]
+position = Vector2(1240, 80)
+
+[node name="SPIKE23" parent="." instance=ExtResource("12_exfi7")]
+position = Vector2(1224, 80)
+
+[node name="SPIKE24" parent="." instance=ExtResource("12_exfi7")]
+position = Vector2(1256, 80)
+
+[node name="SPIKE25" parent="." instance=ExtResource("12_exfi7")]
+position = Vector2(1272, 80)
+
+[node name="Floor green8" parent="." instance=ExtResource("9_ks15b")]
+position = Vector2(1144, 160)
+scale = Vector2(0.5, 0.25)
+
+[node name="Floor green10" parent="." instance=ExtResource("9_ks15b")]
+position = Vector2(1635, 181)
+scale = Vector2(0.2, 0.25)
+
+[node name="Floor green11" parent="." instance=ExtResource("9_ks15b")]
+position = Vector2(1943, 207)
+scale = Vector2(0.2, 0.25)
+
+[node name="Floor green12" parent="." instance=ExtResource("9_ks15b")]
+position = Vector2(2145, 206)
+scale = Vector2(0.2, 0.25)
+
+[node name="Floor green14" parent="." instance=ExtResource("9_ks15b")]
+position = Vector2(2622, 144)
+scale = Vector2(0.15, 0.25)
+
+[node name="Floor green13" parent="." instance=ExtResource("9_ks15b")]
+position = Vector2(2385, 204)
+scale = Vector2(0.1, 0.25)
+
+[node name="SPIKE26" parent="." instance=ExtResource("12_exfi7")]
+position = Vector2(1272, 176)
+
+[node name="SPIKE27" parent="." instance=ExtResource("12_exfi7")]
+position = Vector2(1288, 176)
+
+[node name="LevelFinish2" parent="." instance=ExtResource("10_2luj4")]
+position = Vector2(976, 240)
+
+[node name="Floor green9" parent="." instance=ExtResource("9_ks15b")]
+position = Vector2(1052, 192)
+scale = Vector2(0.1, 0.2)
+
+[node name="SPIKE28" parent="." instance=ExtResource("12_exfi7")]
+position = Vector2(1092, 203)
+
+[node name="SPIKE29" parent="." instance=ExtResource("12_exfi7")]
+position = Vector2(1122, 203)
+
+[node name="SPIKE30" parent="." instance=ExtResource("12_exfi7")]
+position = Vector2(1077, 203)
+
+[node name="SPIKE31" parent="." instance=ExtResource("12_exfi7")]
+position = Vector2(1107, 203)
+
+[node name="SPIKE32" parent="." instance=ExtResource("12_exfi7")]
+position = Vector2(1382, 176)
+
+[node name="SPIKE33" parent="." instance=ExtResource("12_exfi7")]
+position = Vector2(1398, 176)
+
+[node name="SPIKE36" parent="." instance=ExtResource("12_exfi7")]
+position = Vector2(1718, 197)
+
+[node name="SPIKE42" parent="." instance=ExtResource("12_exfi7")]
+position = Vector2(2064, 223)
+
+[node name="SPIKE43" parent="." instance=ExtResource("12_exfi7")]
+position = Vector2(2080, 223)
+
+[node name="SPIKE45" parent="." instance=ExtResource("12_exfi7")]
+position = Vector2(2457, 220)
+
+[node name="SPIKE47" parent="." instance=ExtResource("12_exfi7")]
+position = Vector2(2737, 160)
+
+[node name="SPIKE38" parent="." instance=ExtResource("12_exfi7")]
+position = Vector2(2048, 223)
+
+[node name="SPIKE39" parent="." instance=ExtResource("12_exfi7")]
+position = Vector2(2033, 223)
+
+[node name="SPIKE40" parent="." instance=ExtResource("12_exfi7")]
+position = Vector2(2018, 223)
+
+[node name="SPIKE41" parent="." instance=ExtResource("12_exfi7")]
+position = Vector2(2002, 223)
+
+[node name="GravityUpPortal3" parent="." instance=ExtResource("11_6g3ml")]
+position = Vector2(1477, 158)
+
+[node name="GravityUpPortal4" parent="." instance=ExtResource("11_6g3ml")]
+position = Vector2(1760, 181)
+
+[node name="GravityUpPortal5" parent="." instance=ExtResource("11_6g3ml")]
+position = Vector2(2288, 205)
+
+[node name="GravityUpPortal6" parent="." instance=ExtResource("11_6g3ml")]
+position = Vector2(2500, 205)
+
+[node name="FLOOR3" parent="." instance=ExtResource("6_5jadr")]
+position = Vector2(1653, 82)
+rotation = 3.14159
+scale = Vector2(0.25, 1)
+
+[node name="FLOOR7" parent="." instance=ExtResource("6_5jadr")]
+position = Vector2(2125, 79)
+rotation = 3.14159
+scale = Vector2(0.25, 1)
+
+[node name="FLOOR4" parent="." instance=ExtResource("6_5jadr")]
+position = Vector2(1719, 115)
+rotation = 3.14159
+scale = Vector2(0.1, 1)
+
+[node name="FLOOR5" parent="." instance=ExtResource("6_5jadr")]
+position = Vector2(1822, 138)
+rotation = 3.14159
+scale = Vector2(0.1, 1)
+
+[node name="FLOOR6" parent="." instance=ExtResource("6_5jadr")]
+position = Vector2(1924, 163)
+rotation = 3.14159
+scale = Vector2(0.1, 1)
+
+[node name="FLOOR8" parent="." instance=ExtResource("6_5jadr")]
+position = Vector2(2365, 130)
+rotation = 3.14159
+scale = Vector2(0.1, 1)
+
+[node name="FLOOR9" parent="." instance=ExtResource("6_5jadr")]
+position = Vector2(2573, 131)
+rotation = 3.14159
+scale = Vector2(0.1, 1)
+
+[node name="FLOOR10" parent="." instance=ExtResource("6_5jadr")]
+position = Vector2(2643, 92)
+rotation = 3.14159
+scale = Vector2(0.1, 1)
+
+[node name="GravityDownPortal3" parent="." instance=ExtResource("13_t8see")]
+position = Vector2(1656, 146)
+
+[node name="GravityDownPortal4" parent="." instance=ExtResource("13_t8see")]
+position = Vector2(2022, 129)
+
+[node name="GravityDownPortal6" parent="." instance=ExtResource("13_t8see")]
+position = Vector2(2393, 168)
+
+[node name="GravityDownPortal5" parent="." instance=ExtResource("13_t8see")]
+position = Vector2(2157, 130)
+
+[node name="GravityDownPortal7" parent="." instance=ExtResource("13_t8see")]
+position = Vector2(2629, 122)
+
+[node name="Void2" parent="." instance=ExtResource("9_4el4l")]
+position = Vector2(9, -102)
 scale = Vector2(20, 1)

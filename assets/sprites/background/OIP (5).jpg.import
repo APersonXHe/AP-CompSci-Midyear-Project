@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://80o48cpu5e5m"
-path="res://.godot/imported/blue_rectangle.png-f1bc44a3f94760dc36625656726fc396.ctex"
+uid="uid://tvtpuuk0y3a"
+path="res://.godot/imported/OIP (5).jpg-2db326738d8936fdcb9fdb29ff24ba8b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/background/blue_rectangle.png"
-dest_files=["res://.godot/imported/blue_rectangle.png-f1bc44a3f94760dc36625656726fc396.ctex"]
+source_file="res://assets/sprites/background/OIP (5).jpg"
+dest_files=["res://.godot/imported/OIP (5).jpg-2db326738d8936fdcb9fdb29ff24ba8b.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://80o48cpu5e5m"
-path="res://.godot/imported/blue_rectangle.png-f1bc44a3f94760dc36625656726fc396.ctex"
+uid="uid://bmr7lpynftgrw"
+path="res://.godot/imported/124-1240056_neon-line-png-colorfulness-removebg-preview.png-9d67c9ee75b0a36914a5a452b6400b3e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/background/blue_rectangle.png"
-dest_files=["res://.godot/imported/blue_rectangle.png-f1bc44a3f94760dc36625656726fc396.ctex"]
+source_file="res://assets/sprites/background/124-1240056_neon-line-png-colorfulness-removebg-preview.png"
+dest_files=["res://.godot/imported/124-1240056_neon-line-png-colorfulness-removebg-preview.png-9d67c9ee75b0a36914a5a452b6400b3e.ctex"]
 
 [params]
 
