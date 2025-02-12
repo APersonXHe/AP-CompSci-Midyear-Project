@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://c883eqefvqjvf"]
+
+[ext_resource type="Script" path="res://scripts/world/victory_menu.gd" id="1_bleaj"]
+[ext_resource type="Texture2D" uid="uid://ddlyrcj5dwkcy" path="res://assets/sprites/background/pixelated_music_bg2.png" id="2_2ska5"]
+[ext_resource type="FontFile" uid="uid://bkxjqx6usq3g4" path="res://assets/fonts/Silkscreen-Regular.ttf" id="3_nh2x2"]
+
+[node name="VictoryMenu" type="CanvasLayer"]
+script = ExtResource("1_bleaj")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -13.0
+offset_top = -4.0
+offset_right = 3827.0
+offset_bottom = 2156.0
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("2_2ska5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 320.0
+offset_bottom = 180.0
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Text" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_nh2x2")
+text = "CONGRATULATIONS!
+You FINISHED THE LEVEL!"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Menu" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_nh2x2")
+text = "Menu"
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Menu" to="." method="_on_menu_pressed"]

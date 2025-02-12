@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bf758jih3iq0f"
+path="res://.godot/imported/DJVI - Cycles.mp3-554feb01c94921cfe9f03da8b4dea7d9.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/DJVI - Cycles.mp3"
+dest_files=["res://.godot/imported/DJVI - Cycles.mp3-554feb01c94921cfe9f03da8b4dea7d9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

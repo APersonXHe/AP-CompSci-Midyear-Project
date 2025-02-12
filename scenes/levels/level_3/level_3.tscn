@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://308k8myhlsao"]
+[gd_scene load_steps=32 format=3 uid="uid://308k8myhlsao"]
 
 [ext_resource type="Script" path="res://scripts/levels/level_3/level_3.gd" id="1_p4gtc"]
 [ext_resource type="Texture2D" uid="uid://dd8vmwnpkwhib" path="res://assets/sprites/background/mt_fuji.jpg" id="2_2n0t1"]
@@ -16,6 +16,8 @@
 [ext_resource type="PackedScene" uid="uid://bmy2kltdc8yqo" path="res://scenes/world/gravity_down_portal.tscn" id="14_0n4nm"]
 [ext_resource type="PackedScene" uid="uid://bf8kvrau2t2rd" path="res://scenes/world/teleportal.tscn" id="15_f1e0k"]
 [ext_resource type="FontFile" uid="uid://tjda5mp3yehk" path="res://assets/fonts/Silkscreen-Bold.ttf" id="16_m6vmj"]
+[ext_resource type="PackedScene" uid="uid://dyd7exovoebl3" path="res://scenes/world/level_finish.tscn" id="17_v1qhr"]
+[ext_resource type="PackedScene" uid="uid://c883eqefvqjvf" path="res://scenes/world/victory_menu.tscn" id="18_ixt8p"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_jhe84"]
 frequency = 0.03
@@ -71,7 +73,7 @@ particle_flag_align_y = true
 particle_flag_disable_z = true
 emission_shape_offset = Vector3(200, -200, 0)
 emission_shape = 3
-emission_box_extents = Vector3(5000, 1, 1)
+emission_box_extents = Vector3(10000, 1, 1)
 gravity = Vector3(-500, 3000, 0)
 scale_max = 1.5
 scale_over_velocity_curve = SubResource("CurveXYZTexture_miwfv")
@@ -465,10 +467,10 @@ texture = ExtResource("8_832is")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 material = SubResource("CanvasItemMaterial_gg0gr")
-amount = 500
+amount = 5000
 process_material = SubResource("ParticleProcessMaterial_i6n0b")
 preprocess = 0.5
-visibility_rect = Rect2(-100, -50, 750, 400)
+visibility_rect = Rect2(-100, -50, 10000, 400)
 
 [node name="FLOOR" parent="." instance=ExtResource("9_yrfak")]
 position = Vector2(-81, 180)
@@ -582,6 +584,10 @@ scale = Vector2(0.3, 1)
 position = Vector2(7616, 172)
 scale = Vector2(0.3, 1)
 
+[node name="FLOOR38" parent="." instance=ExtResource("9_yrfak")]
+position = Vector2(7752, 172)
+scale = Vector2(0.3, 1)
+
 [node name="FLOOR27" parent="." instance=ExtResource("9_yrfak")]
 position = Vector2(5853, 48)
 scale = Vector2(0.7, 1)
@@ -661,6 +667,9 @@ position = Vector2(7400, 145)
 
 [node name="SlowPortal12" parent="." instance=ExtResource("11_a1xhy")]
 position = Vector2(7440, 144)
+
+[node name="SlowPortal13" parent="." instance=ExtResource("11_a1xhy")]
+position = Vector2(7593, 144)
 
 [node name="SpeedPortal" parent="." instance=ExtResource("11_07xnb")]
 position = Vector2(250, 154)
@@ -769,10 +778,10 @@ rotation = 3.14159
 linked_portal = NodePath("../Teleportal")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 7574.0
-offset_top = 105.0
-offset_right = 7614.0
-offset_bottom = 128.0
+offset_left = 7712.0
+offset_top = 104.0
+offset_right = 7752.0
+offset_bottom = 127.0
 theme_override_fonts/font = ExtResource("16_m6vmj")
 text = "GG!"
 horizontal_alignment = 1
@@ -786,3 +795,9 @@ theme_override_fonts/font = ExtResource("16_m6vmj")
 text = "level by
 xinyang
 he"
+
+[node name="LevelFinish" parent="." instance=ExtResource("17_v1qhr")]
+position = Vector2(7840, 134)
+
+[node name="VictoryMenu" parent="." instance=ExtResource("18_ixt8p")]
+visible = false

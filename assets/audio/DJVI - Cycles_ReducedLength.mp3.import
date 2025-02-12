@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dqt8wh87qs7ya"
+path="res://.godot/imported/DJVI - Cycles_ReducedLength.mp3-3b002e4774c0c113c1b34334660f4c42.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/DJVI - Cycles_ReducedLength.mp3"
+dest_files=["res://.godot/imported/DJVI - Cycles_ReducedLength.mp3-3b002e4774c0c113c1b34334660f4c42.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
