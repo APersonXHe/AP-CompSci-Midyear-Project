@@ -127,6 +127,34 @@ position = Vector2(212, 172)
 [node name="SPIKE4" parent="." instance=ExtResource("5_6we6i")]
 position = Vector2(596, 112)
 
+[node name="SPIKE5" parent="." instance=ExtResource("5_6we6i")]
+position = Vector2(1070, 162)
+
+[node name="SPIKE6" parent="." instance=ExtResource("5_6we6i")]
+position = Vector2(850, 163)
+
+[node name="SPIKE7" parent="." instance=ExtResource("5_6we6i")]
+position = Vector2(1037, 162)
+
+[node name="SPIKE8" parent="." instance=ExtResource("5_6we6i")]
+position = Vector2(1054, 162)
+
+[node name="SPIKE9" parent="." instance=ExtResource("5_6we6i")]
+position = Vector2(1171, 162)
+
+[node name="SPIKE13" parent="." instance=ExtResource("5_6we6i")]
+position = Vector2(1268, 100)
+rotation = 3.14159
+
+[node name="SPIKE10" parent="." instance=ExtResource("5_6we6i")]
+position = Vector2(1393, 147)
+
+[node name="SPIKE11" parent="." instance=ExtResource("5_6we6i")]
+position = Vector2(1432, 146)
+
+[node name="SPIKE12" parent="." instance=ExtResource("5_6we6i")]
+position = Vector2(1469, 146)
+
 [node name="RetryPauseMenu" parent="." instance=ExtResource("6_m8qna")]
 visible = false
 
@@ -157,6 +185,12 @@ scale = Vector2(0.25, 1)
 [node name="FLOOR4" parent="." instance=ExtResource("9_yrfak")]
 position = Vector2(736, 172)
 
+[node name="FLOOR5" parent="." instance=ExtResource("9_yrfak")]
+position = Vector2(1188, 156)
+
+[node name="FLOOR6" parent="." instance=ExtResource("9_yrfak")]
+position = Vector2(1189, 77)
+
 [node name="Void" parent="." instance=ExtResource("10_72k6a")]
 position = Vector2(272, 207)
 scale = Vector2(100, 1)
@@ -164,11 +198,29 @@ scale = Vector2(100, 1)
 [node name="SlowPortal" parent="." instance=ExtResource("11_a1xhy")]
 position = Vector2(640, 94)
 
+[node name="SlowPortal2" parent="." instance=ExtResource("11_a1xhy")]
+position = Vector2(1098, 141)
+
+[node name="SlowPortal3" parent="." instance=ExtResource("11_a1xhy")]
+position = Vector2(1136, 141)
+
 [node name="SpeedPortal" parent="." instance=ExtResource("11_07xnb")]
 position = Vector2(250, 154)
+
+[node name="SpeedPortal2" parent="." instance=ExtResource("11_07xnb")]
+position = Vector2(884, 144)
+
+[node name="SpeedPortal3" parent="." instance=ExtResource("11_07xnb")]
+position = Vector2(920, 144)
 
 [node name="GravityUpPortal" parent="." instance=ExtResource("13_7pqf4")]
 position = Vector2(691, 94)
 
+[node name="GravityUpPortal2" parent="." instance=ExtResource("13_7pqf4")]
+position = Vector2(1201, 131)
+
 [node name="GravityDownPortal" parent="." instance=ExtResource("14_0n4nm")]
 position = Vector2(729, 49)
+
+[node name="GravityDownPortal2" parent="." instance=ExtResource("14_0n4nm")]
+position = Vector2(1302, 116)

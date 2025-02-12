@@ -35,9 +35,14 @@ func apply_gravity(delta):
 		velocity.x += gravity * delta  # Push right
 
 func handle_jump():
-	if is_on_floor():
+	# Adjust the is_on_floor() check based on gravity direction
+	if (gravity_direction == Vector2.DOWN and is_on_floor()) or (gravity_direction == Vector2.UP and is_on_ceiling()):
 		if Input.is_action_just_pressed("ui_accept"):
-			velocity.y = JUMP_VELOCITY  # Jump by changing the velocity upwards
+			if gravity_direction == Vector2.DOWN:
+				velocity.y = JUMP_VELOCITY  # Normal jump (upwards)
+			elif gravity_direction == Vector2.UP:
+				velocity.y = -JUMP_VELOCITY  # Inverted jump (downwards)
+
 
 func apply_friction(delta):
 	# Apply friction on the x-axis
