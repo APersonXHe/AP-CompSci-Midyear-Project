@@ -1,4 +1,4 @@
-extends CharacterBody2D #extends all of the stuff from CharacterBody2D
+extends CharacterBody2D
 
 var ORIGINALSPEED = 120.0
 const JUMP_VELOCITY = -300.0  # negative going up for y, positive going down for y. x is normal left right
@@ -9,33 +9,38 @@ var speed_before_pause = speed
 var start_position : Vector2
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var gravity_direction = Vector2.DOWN  # Default gravity direction
+
 func _ready():
 	start_position = position
-	
-func _physics_process(delta: float) -> void: # delta i think is time? not too sure
+
+func _physics_process(delta: float) -> void:
 	handle_jump()
 	apply_gravity(delta)
 	
 	velocity.x = speed
 
 	apply_friction(delta)
-	move_and_slide() # takes velocity and moves character by that velocity while also colliding (sliding) on static bodies
-	#if is_on_spike():
-		#reset_game()
-# move_and_slide multiplies by delta
-
+	move_and_slide()
 
 func apply_gravity(delta):
-	if not is_on_floor():
-		velocity += get_gravity() * delta
- 
+	# Apply gravity in the direction specified by gravity_direction
+	if gravity_direction == Vector2.DOWN:
+		velocity.y += gravity * delta  # Pull down
+	elif gravity_direction == Vector2.UP:
+		velocity.y -= gravity * delta  # Push up
+	elif gravity_direction == Vector2.LEFT:
+		velocity.x -= gravity * delta  # Pull left
+	elif gravity_direction == Vector2.RIGHT:
+		velocity.x += gravity * delta  # Push right
+
 func handle_jump():
 	if is_on_floor():
 		if Input.is_action_just_pressed("ui_accept"):
-			velocity.y = JUMP_VELOCITY
-
+			velocity.y = JUMP_VELOCITY  # Jump by changing the velocity upwards
 
 func apply_friction(delta):
+	# Apply friction on the x-axis
 	velocity.x = move_toward(velocity.x, speed, FRICTION * delta)
 	
 """
@@ -80,3 +85,6 @@ func unfreeze():
 	speed = speed_before_pause  # Restore movement
 	set_process(true)  # Re-enable input handling
 	set_physics_process(true)  # Re-enable physics
+
+func set_gravity_direction(new_gravity_direction):
+	gravity_direction = new_gravity_direction

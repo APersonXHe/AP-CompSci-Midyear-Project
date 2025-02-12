@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://308k8myhlsao"]
+[gd_scene load_steps=28 format=3 uid="uid://308k8myhlsao"]
 
 [ext_resource type="Script" path="res://scripts/levels/level_3/level_3.gd" id="1_p4gtc"]
 [ext_resource type="Texture2D" uid="uid://dd8vmwnpkwhib" path="res://assets/sprites/background/mt_fuji.jpg" id="2_2n0t1"]
@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://eeowqwpvxbvc" path="res://scenes/world/void.tscn" id="10_72k6a"]
 [ext_resource type="PackedScene" uid="uid://d3bgdcum8jp5y" path="res://scenes/world/speed_portal.tscn" id="11_07xnb"]
 [ext_resource type="PackedScene" uid="uid://2k5mt1r1jp2s" path="res://scenes/world/slow_portal.tscn" id="11_a1xhy"]
+[ext_resource type="PackedScene" uid="uid://dhqm6y73ribvy" path="res://scenes/world/gravity_up_portal.tscn" id="13_7pqf4"]
+[ext_resource type="PackedScene" uid="uid://bmy2kltdc8yqo" path="res://scenes/world/gravity_down_portal.tscn" id="14_0n4nm"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_jhe84"]
 frequency = 0.03
@@ -130,8 +132,8 @@ visible = false
 
 [node name="Water" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_asyk6")
-position = Vector2(1340, 241)
-scale = Vector2(100, 0.944)
+position = Vector2(4735, 241)
+scale = Vector2(51.8182, 0.944)
 texture = ExtResource("8_832is")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
@@ -150,7 +152,10 @@ scale = Vector2(0.5, 1)
 
 [node name="FLOOR3" parent="." instance=ExtResource("9_yrfak")]
 position = Vector2(591, 121)
-scale = Vector2(0.4, 1)
+scale = Vector2(0.25, 1)
+
+[node name="FLOOR4" parent="." instance=ExtResource("9_yrfak")]
+position = Vector2(736, 172)
 
 [node name="Void" parent="." instance=ExtResource("10_72k6a")]
 position = Vector2(272, 207)
@@ -161,3 +166,9 @@ position = Vector2(640, 94)
 
 [node name="SpeedPortal" parent="." instance=ExtResource("11_07xnb")]
 position = Vector2(250, 154)
+
+[node name="GravityUpPortal" parent="." instance=ExtResource("13_7pqf4")]
+position = Vector2(691, 94)
+
+[node name="GravityDownPortal" parent="." instance=ExtResource("14_0n4nm")]
+position = Vector2(729, 49)

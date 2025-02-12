@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmy2kltdc8yqo"]
+
+[ext_resource type="Script" path="res://scripts/world/gravity_down_portal.gd" id="1_4ggef"]
+[ext_resource type="Texture2D" uid="uid://pxwfptxpssri" path="res://assets/sprites/world/gravity_down_portal.png" id="2_muwc0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e73i7"]
+
+[node name="GravityDownPortal" type="Area2D"]
+script = ExtResource("1_4ggef")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_e73i7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_muwc0")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
