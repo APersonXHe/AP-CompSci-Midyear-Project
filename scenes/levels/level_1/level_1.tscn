@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://v6gusyi768gk"]
+[gd_scene load_steps=13 format=3 uid="uid://v6gusyi768gk"]
 
 [ext_resource type="Script" path="res://scripts/levels/level_1/level_1.gd" id="1_rmlb7"]
 [ext_resource type="Texture2D" uid="uid://1ppwk1a1fd4c" path="res://assets/sprites/background/sky.png" id="2_kgbnf"]
@@ -10,8 +10,11 @@
 [ext_resource type="PackedScene" uid="uid://dyd7exovoebl3" path="res://scenes/world/level_finish.tscn" id="9_ep4ns"]
 [ext_resource type="PackedScene" uid="uid://c883eqefvqjvf" path="res://scenes/world/victory_menu.tscn" id="9_jmmcq"]
 [ext_resource type="PackedScene" uid="uid://eeowqwpvxbvc" path="res://scenes/world/void.tscn" id="10_wvyip"]
+[ext_resource type="PackedScene" uid="uid://dhqm6y73ribvy" path="res://scenes/world/gravity_up_portal.tscn" id="11_7q85h"]
+[ext_resource type="PackedScene" uid="uid://bmy2kltdc8yqo" path="res://scenes/world/gravity_down_portal.tscn" id="12_2hu2r"]
 
 [node name="Parallax" type="Node2D"]
+position = Vector2(65, 2)
 script = ExtResource("1_rmlb7")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -63,10 +66,86 @@ scale = Vector2(0.2, 0.5)
 [node name="SPIKE" parent="." instance=ExtResource("9_80xw1")]
 position = Vector2(1069, 69)
 
-[node name="Void" parent="SPIKE" instance=ExtResource("10_wvyip")]
-position = Vector2(-1130, 282)
-scale = Vector2(20, 1)
-
 [node name="FLOOR5" parent="." instance=ExtResource("6_p6j1n")]
 position = Vector2(1140, 176)
+scale = Vector2(0.5, 0.5)
+
+[node name="Void" parent="." instance=ExtResource("10_wvyip")]
+position = Vector2(2, 306)
+scale = Vector2(20, 1)
+
+[node name="SPIKE2" parent="." instance=ExtResource("9_80xw1")]
+position = Vector2(1308, 164)
+
+[node name="SPIKE3" parent="." instance=ExtResource("9_80xw1")]
+position = Vector2(1324, 164)
+
+[node name="GravityUpPortal" parent="." instance=ExtResource("11_7q85h")]
+position = Vector2(1413, 148)
+
+[node name="FLOOR6" parent="." instance=ExtResource("6_p6j1n")]
+position = Vector2(1393, 60)
+scale = Vector2(0.65, 0.5)
+
+[node name="SPIKE4" parent="." instance=ExtResource("9_80xw1")]
+position = Vector2(1557, 72)
+rotation = 3.14159
+
+[node name="SPIKE5" parent="." instance=ExtResource("9_80xw1")]
+position = Vector2(1572, 72)
+rotation = 3.14159
+
+[node name="SPIKE6" parent="." instance=ExtResource("9_80xw1")]
+position = Vector2(1706, 72)
+rotation = 3.14159
+
+[node name="SPIKE7" parent="." instance=ExtResource("9_80xw1")]
+position = Vector2(1721, 72)
+rotation = 3.14159
+
+[node name="FLOOR7" parent="." instance=ExtResource("6_p6j1n")]
+position = Vector2(1950, 61)
+scale = Vector2(0.1, 0.5)
+
+[node name="Void2" parent="." instance=ExtResource("10_wvyip")]
+position = Vector2(0, -178)
+scale = Vector2(20, 1)
+
+[node name="FLOOR8" parent="." instance=ExtResource("6_p6j1n")]
+position = Vector2(2068, 62)
+scale = Vector2(0.1, 0.5)
+
+[node name="FLOOR9" parent="." instance=ExtResource("6_p6j1n")]
+position = Vector2(2183, 61)
+scale = Vector2(0.1, 0.5)
+
+[node name="GravityDownPortal" parent="." instance=ExtResource("12_2hu2r")]
+position = Vector2(2246, 90)
+
+[node name="FLOOR10" parent="." instance=ExtResource("6_p6j1n")]
+position = Vector2(2240, 198)
 scale = Vector2(1, 0.5)
+
+[node name="SPIKE8" parent="." instance=ExtResource("9_80xw1")]
+position = Vector2(2360, 190)
+scale = Vector2(0.5, 0.5)
+
+[node name="SPIKE9" parent="." instance=ExtResource("9_80xw1")]
+position = Vector2(2376, 190)
+scale = Vector2(0.5, 0.5)
+
+[node name="SPIKE10" parent="." instance=ExtResource("9_80xw1")]
+position = Vector2(2368, 190)
+scale = Vector2(0.5, 0.5)
+
+[node name="SPIKE11" parent="." instance=ExtResource("9_80xw1")]
+position = Vector2(2427, 190)
+scale = Vector2(0.5, 0.5)
+
+[node name="SPIKE12" parent="." instance=ExtResource("9_80xw1")]
+position = Vector2(2443, 190)
+scale = Vector2(0.5, 0.5)
+
+[node name="SPIKE13" parent="." instance=ExtResource("9_80xw1")]
+position = Vector2(2435, 190)
+scale = Vector2(0.5, 0.5)
