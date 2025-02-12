@@ -11,15 +11,31 @@ var start_position : Vector2
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var gravity_direction = Vector2.DOWN  # Default gravity direction
 
+const JUMP_BUFFER_TIME = 0.1  # Time window to buffer jump input
+const COYOTE_TIME = 0.1       # Time window for "coyote jump" after falling
+
+var jump_buffer_timer = 0.0
+var coyote_timer = 0.0
+var has_jumped = false  # Track if the player has already jumped
+
 func _ready():
 	start_position = position
 
 func _physics_process(delta: float) -> void:
+	# Update timers
+	if jump_buffer_timer > 0:
+		jump_buffer_timer -= delta
+	if (gravity_direction == Vector2.DOWN and is_on_floor()) or (gravity_direction == Vector2.UP and is_on_ceiling()):
+		coyote_timer = COYOTE_TIME  # Reset coyote timer when on the correct surface
+		has_jumped = false
+	else:
+		coyote_timer -= delta
+
+
 	handle_jump()
 	apply_gravity(delta)
-	
-	velocity.x = speed
 
+	velocity.x = speed
 	apply_friction(delta)
 	move_and_slide()
 
@@ -35,14 +51,18 @@ func apply_gravity(delta):
 		velocity.x += gravity * delta  # Push right
 
 func handle_jump():
-	# Adjust the is_on_floor() check based on gravity direction
-	if (gravity_direction == Vector2.DOWN and is_on_floor()) or (gravity_direction == Vector2.UP and is_on_ceiling()):
-		if Input.is_action_just_pressed("ui_accept"):
-			if gravity_direction == Vector2.DOWN:
-				velocity.y = JUMP_VELOCITY  # Normal jump (upwards)
-			elif gravity_direction == Vector2.UP:
-				velocity.y = -JUMP_VELOCITY  # Inverted jump (downwards)
+	# Handle jump input buffering
+	if Input.is_action_just_pressed("ui_accept"):
+		jump_buffer_timer = JUMP_BUFFER_TIME
 
+	# Allow jumping if buffered jump is still valid and within coyote time
+	if (jump_buffer_timer > 0 or Input.is_action_pressed("ui_accept")) and coyote_timer > 0 and not has_jumped:
+		if gravity_direction == Vector2.DOWN:
+			velocity.y = JUMP_VELOCITY
+		elif gravity_direction == Vector2.UP:
+			velocity.y = -JUMP_VELOCITY
+		jump_buffer_timer = 0.0  # Reset jump buffer
+		has_jumped = true  # Mark that the player has jumped
 
 func apply_friction(delta):
 	# Apply friction on the x-axis

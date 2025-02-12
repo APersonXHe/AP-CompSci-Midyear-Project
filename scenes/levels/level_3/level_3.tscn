@@ -192,7 +192,7 @@ rotation = 3.14159
 scale = Vector2(0.5, 0.5)
 
 [node name="SPIKE37" parent="." instance=ExtResource("5_6we6i")]
-position = Vector2(3208, 71)
+position = Vector2(3251, 71)
 rotation = 3.14159
 
 [node name="SPIKE24" parent="." instance=ExtResource("5_6we6i")]
@@ -236,7 +236,19 @@ position = Vector2(2659, 162)
 position = Vector2(3181, 115)
 
 [node name="SPIKE39" parent="." instance=ExtResource("5_6we6i")]
-position = Vector2(3164, 115)
+position = Vector2(3195, 115)
+
+[node name="SPIKE40" parent="." instance=ExtResource("5_6we6i")]
+position = Vector2(3335, 114)
+
+[node name="SPIKE41" parent="." instance=ExtResource("5_6we6i")]
+position = Vector2(3349, 114)
+
+[node name="SPIKE42" parent="." instance=ExtResource("5_6we6i")]
+position = Vector2(468, 129)
+
+[node name="SPIKE43" parent="." instance=ExtResource("5_6we6i")]
+position = Vector2(3319, 114)
 
 [node name="SPIKE16" parent="." instance=ExtResource("5_6we6i")]
 position = Vector2(580, 128)
@@ -303,6 +315,10 @@ scale = Vector2(0.6, 1)
 position = Vector2(3006, 53)
 scale = Vector2(0.6, 1)
 
+[node name="FLOOR15" parent="." instance=ExtResource("9_yrfak")]
+position = Vector2(3375, -19)
+scale = Vector2(0.6, 1)
+
 [node name="FLOOR13" parent="." instance=ExtResource("9_yrfak")]
 position = Vector2(3094, 125)
 scale = Vector2(0.7, 1)
@@ -320,6 +336,10 @@ position = Vector2(1189, 77)
 
 [node name="Void" parent="." instance=ExtResource("10_72k6a")]
 position = Vector2(272, 207)
+scale = Vector2(100, 1)
+
+[node name="Void2" parent="." instance=ExtResource("10_72k6a")]
+position = Vector2(267, -256)
 scale = Vector2(100, 1)
 
 [node name="SlowPortal" parent="." instance=ExtResource("11_a1xhy")]
@@ -396,6 +416,9 @@ position = Vector2(2897, 113)
 
 [node name="GravityUpPortal7" parent="." instance=ExtResource("13_7pqf4")]
 position = Vector2(2972, 144)
+
+[node name="GravityUpPortal8" parent="." instance=ExtResource("13_7pqf4")]
+position = Vector2(3386, 95)
 
 [node name="GravityDownPortal7" parent="." instance=ExtResource("14_0n4nm")]
 position = Vector2(3104, 95)
