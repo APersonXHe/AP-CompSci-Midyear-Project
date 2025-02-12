@@ -1,10 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://71s20u3mwjvs"]
+[gd_scene load_steps=6 format=3 uid="uid://yht6d3wsv0nu"]
 
 [ext_resource type="Script" path="res://scripts/drum_machine/drum_machine.gd" id="1_mw34x"]
-[ext_resource type="PackedScene" uid="uid://pohcv3tfqhnm" path="res://scenes/drum_machine/beat_obstacle_cyan.tscn" id="2_4yb50"]
-[ext_resource type="PackedScene" uid="uid://bp8fb65hwsu47" path="res://scenes/drum_machine/beat_obstacle_orange.tscn" id="3_qoaie"]
-[ext_resource type="PackedScene" uid="uid://bcmmap64lgy4w" path="res://scenes/drum_machine/beat_obstacle_red.tscn" id="4_w027a"]
-[ext_resource type="PackedScene" uid="uid://8p5murs3blri" path="res://scenes/drum_machine/beat_obstacle_green.tscn" id="5_5ye27"]
+[ext_resource type="PackedScene" path="res://scenes/drum_machine/beat_obstacle_cyan.tscn" id="2_4yb50"]
+[ext_resource type="PackedScene" path="res://scenes/drum_machine/beat_obstacle_orange.tscn" id="3_qoaie"]
+[ext_resource type="PackedScene" path="res://scenes/drum_machine/beat_obstacle_red.tscn" id="4_w027a"]
+[ext_resource type="PackedScene" path="res://scenes/drum_machine/beat_obstacle_green.tscn" id="5_5ye27"]
 
 [node name="DrumMachine" type="Node2D"]
 script = ExtResource("1_mw34x")

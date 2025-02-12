@@ -1,14 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://v6gusyi768gk"]
+[gd_scene load_steps=11 format=3 uid="uid://v6gusyi768gk"]
 
 [ext_resource type="Script" path="res://scripts/levels/level_1/level_1.gd" id="1_rmlb7"]
 [ext_resource type="Texture2D" uid="uid://1ppwk1a1fd4c" path="res://assets/sprites/background/sky.png" id="2_kgbnf"]
 [ext_resource type="Texture2D" uid="uid://c27dgn6a43bn6" path="res://assets/sprites/background/mountains.png" id="3_k6tro"]
 [ext_resource type="PackedScene" uid="uid://bbj3ghmos7sya" path="res://scenes/player/player.tscn" id="4_7e8nx"]
 [ext_resource type="PackedScene" uid="uid://b2govl64kjjal" path="res://scenes/world/floor.tscn" id="6_p6j1n"]
-[ext_resource type="PackedScene" uid="uid://71s20u3mwjvs" path="res://scenes/drum_machine/drum_machine.tscn" id="7_1evpb"]
 [ext_resource type="PackedScene" uid="uid://c7dy3i876k4jn" path="res://scenes/world/retry_pause_menu.tscn" id="8_ncge4"]
+[ext_resource type="PackedScene" uid="uid://c8ytpxskly7h6" path="res://scenes/world/spike.tscn" id="9_80xw1"]
 [ext_resource type="PackedScene" uid="uid://dyd7exovoebl3" path="res://scenes/world/level_finish.tscn" id="9_ep4ns"]
 [ext_resource type="PackedScene" uid="uid://c883eqefvqjvf" path="res://scenes/world/victory_menu.tscn" id="9_jmmcq"]
+[ext_resource type="PackedScene" uid="uid://eeowqwpvxbvc" path="res://scenes/world/void.tscn" id="10_wvyip"]
 
 [node name="Parallax" type="Node2D"]
 script = ExtResource("1_rmlb7")
@@ -35,12 +36,6 @@ centered = false
 [node name="Player" parent="." instance=ExtResource("4_7e8nx")]
 position = Vector2(13, 158)
 
-[node name="FLOOR" parent="." instance=ExtResource("6_p6j1n")]
-position = Vector2(8, 176)
-
-[node name="DrumMachine" parent="." instance=ExtResource("7_1evpb")]
-position = Vector2(162, 151)
-
 [node name="RetryPauseMenu" parent="." instance=ExtResource("8_ncge4")]
 visible = false
 
@@ -48,4 +43,30 @@ visible = false
 visible = false
 
 [node name="LevelFinish" parent="." instance=ExtResource("9_ep4ns")]
-position = Vector2(270, 130)
+position = Vector2(4048, 128)
+
+[node name="FLOOR" parent="." instance=ExtResource("6_p6j1n")]
+position = Vector2(8, 176)
+
+[node name="FLOOR2" parent="." instance=ExtResource("6_p6j1n")]
+position = Vector2(761, 140)
+scale = Vector2(0.2, 0.5)
+
+[node name="FLOOR3" parent="." instance=ExtResource("6_p6j1n")]
+position = Vector2(868, 110)
+scale = Vector2(0.2, 0.5)
+
+[node name="FLOOR4" parent="." instance=ExtResource("6_p6j1n")]
+position = Vector2(984, 82)
+scale = Vector2(0.2, 0.5)
+
+[node name="SPIKE" parent="." instance=ExtResource("9_80xw1")]
+position = Vector2(1069, 69)
+
+[node name="Void" parent="SPIKE" instance=ExtResource("10_wvyip")]
+position = Vector2(-1130, 282)
+scale = Vector2(20, 1)
+
+[node name="FLOOR5" parent="." instance=ExtResource("6_p6j1n")]
+position = Vector2(1140, 176)
+scale = Vector2(1, 0.5)

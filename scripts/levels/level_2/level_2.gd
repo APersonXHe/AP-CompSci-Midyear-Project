@@ -17,10 +17,12 @@ func _ready():  # this is just placeholder code demonstrating how you can code t
 	retry_menu.visible = false  # Hide retry menu initially
 	victory_menu.visible = false
 	#print("Retry menu visibility at start after set to false:", retry_menu.visible)
-	for i in range(5):  # Create 5 blocks
+	for i in range(2):  # Create 5 blocks
 		var block = block_scene.instantiate()
-		block.position = Vector2((i+1) * 100, 160)  # Position them with some space between
+		block.position = Vector2((i+4) * 50, 160)  # Position them with some space between
 		add_child(block)  # Add the block to the scene
+	
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
