@@ -4,11 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://pxwfptxpssri" path="res://assets/sprites/world/gravity_down_portal.png" id="2_muwc0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e73i7"]
+size = Vector2(33, 47)
 
 [node name="GravityDownPortal" type="Area2D"]
 script = ExtResource("1_4ggef")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_e73i7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

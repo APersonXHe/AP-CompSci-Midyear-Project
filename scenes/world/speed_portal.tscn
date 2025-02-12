@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bq6fbioo140rm" path="res://assets/sprites/world/speed_portal.png" id="2_8vno6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e73i7"]
+size = Vector2(36, 48)
 
 [node name="SpeedPortal" type="Area2D"]
 script = ExtResource("1_vhr7k")

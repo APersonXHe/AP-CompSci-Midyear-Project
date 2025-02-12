@@ -29,17 +29,17 @@ vertical_alignment = 1
 [node name="Level1" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_njgn2")
-text = "LEVEL 1"
+text = "babaroque"
 
 [node name="Level2" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_njgn2")
-text = "LEVEL 2"
+text = "dreamland"
 
 [node name="Level3" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_njgn2")
-text = "LEVEL 3"
+text = "Chaoz Japan"
 
 [node name="Back" type="Button" parent="."]
 offset_top = 165.0
