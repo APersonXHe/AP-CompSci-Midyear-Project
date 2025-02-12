@@ -56,7 +56,7 @@ func handle_jump():
 		jump_buffer_timer = JUMP_BUFFER_TIME
 
 	# Allow jumping if buffered jump is still valid and within coyote time
-	if (jump_buffer_timer > 0 or Input.is_action_pressed("ui_accept")) and coyote_timer > 0 and not has_jumped:
+	if (jump_buffer_timer > 0 or (Input.is_action_pressed("ui_accept")) or Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)) and coyote_timer > 0 and not has_jumped:
 		if gravity_direction == Vector2.DOWN:
 			velocity.y = JUMP_VELOCITY
 		elif gravity_direction == Vector2.UP:
