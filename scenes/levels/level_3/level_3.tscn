@@ -433,7 +433,7 @@ position = Vector2(7307, 162)
 position = Vector2(7339, 162)
 
 [node name="SPIKE102" parent="." instance=ExtResource("5_6we6i")]
-position = Vector2(7523, 161)
+position = Vector2(7523, 163)
 
 [node name="SPIKE101" parent="." instance=ExtResource("5_6we6i")]
 position = Vector2(7324, 162)
@@ -666,10 +666,7 @@ position = Vector2(7223, 144)
 position = Vector2(7400, 145)
 
 [node name="SlowPortal12" parent="." instance=ExtResource("11_a1xhy")]
-position = Vector2(7440, 144)
-
-[node name="SlowPortal13" parent="." instance=ExtResource("11_a1xhy")]
-position = Vector2(7593, 144)
+position = Vector2(7439, 145)
 
 [node name="SpeedPortal" parent="." instance=ExtResource("11_07xnb")]
 position = Vector2(250, 154)
@@ -700,6 +697,9 @@ position = Vector2(4114, 54)
 
 [node name="SpeedPortal11" parent="." instance=ExtResource("11_07xnb")]
 position = Vector2(4159, 106)
+
+[node name="SpeedPortal12" parent="." instance=ExtResource("11_07xnb")]
+position = Vector2(7595, 146)
 
 [node name="SpeedPortal3" parent="." instance=ExtResource("11_07xnb")]
 position = Vector2(920, 144)

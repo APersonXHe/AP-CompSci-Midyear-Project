@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://galr2ycy0xho"]
+[gd_scene load_steps=11 format=3 uid="uid://galr2ycy0xho"]
 
 [ext_resource type="Script" path="res://scripts/levels/level_2/level_2.gd" id="1_aiox8"]
 [ext_resource type="Texture2D" uid="uid://1ppwk1a1fd4c" path="res://assets/sprites/background/sky.png" id="2_rln4y"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://b2govl64kjjal" path="res://scenes/world/floor.tscn" id="6_5jadr"]
 [ext_resource type="PackedScene" uid="uid://71s20u3mwjvs" path="res://scenes/drum_machine/drum_machine.tscn" id="7_18dab"]
 [ext_resource type="PackedScene" uid="uid://c7dy3i876k4jn" path="res://scenes/world/retry_pause_menu.tscn" id="8_gl1mm"]
+[ext_resource type="PackedScene" uid="uid://c883eqefvqjvf" path="res://scenes/world/victory_menu.tscn" id="9_4qr3o"]
+[ext_resource type="PackedScene" uid="uid://dyd7exovoebl3" path="res://scenes/world/level_finish.tscn" id="10_2luj4"]
 
 [node name="Parallax" type="Node2D"]
 script = ExtResource("1_aiox8")
@@ -45,3 +47,9 @@ position = Vector2(162, 151)
 
 [node name="RetryPauseMenu" parent="." instance=ExtResource("8_gl1mm")]
 visible = false
+
+[node name="VictoryMenu" parent="." instance=ExtResource("9_4qr3o")]
+visible = false
+
+[node name="LevelFinish" parent="." instance=ExtResource("10_2luj4")]
+position = Vector2(591, 129)

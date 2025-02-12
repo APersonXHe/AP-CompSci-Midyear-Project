@@ -3,6 +3,7 @@ extends Node2D
 # Load the block scene
 var block_scene = preload("res://scenes/world/spike.tscn")
 @onready var retry_menu = $RetryPauseMenu
+@onready var victory_menu = $VictoryMenu
 @onready var player = $Player
 
 func _ready():  # this is just placeholder code demonstrating how you can code the creation of multiple blocks, such that you don't have to instance them into parallax every time.
@@ -12,7 +13,9 @@ func _ready():  # this is just placeholder code demonstrating how you can code t
 	#print($RetryPauseMenu)
 	#print("Retry menu visibility at start:", retry_menu.visible)
 	GameManager.player_death.connect(_on_player_died)  # Listen for death signal
+	GameManager.player_victory.connect(_on_player_victory)
 	retry_menu.visible = false  # Hide retry menu initially
+	victory_menu.visible = false
 	#print("Retry menu visibility at start after set to false:", retry_menu.visible)
 	for i in range(5):  # Create 5 blocks
 		var block = block_scene.instantiate()
@@ -44,3 +47,7 @@ func _on_player_died():
 	#player.set_speed(0)
 	AudioManager.stop_music()
 	retry_menu.visible = true  # Show retry menu
+
+func _on_player_victory():
+	AudioManager.stop_music()
+	victory_menu.visible = true  # Show victory menu
